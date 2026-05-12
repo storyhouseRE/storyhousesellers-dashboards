@@ -1,0 +1,2390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>The BestSeller Method™ — 5505 Watervale Drive</title>
+<style>
+  /* ============================================================
+     STORY HOUSE BRAND KIT — Canva Signature Series + extensions
+     Sampled directly from the Story House brand kit in Canva.
+     ============================================================ */
+  :root {
+    --deep-navy:    #343F55;  /* Canva — header band, footer, primary headlines */
+    --slate-blue:   #65778D;  /* Canva — body subtext, muted labels */
+    --light-gray:   #D1D1D1;  /* Canva — borders, dividers */
+    --magenta:      #C64097;  /* Canva — primary accent, "Live" phase, CTA */
+    --mauve:        #A36DA1;  /* Canva — "Launch" phase, secondary headlines, italic House */
+    --soft-teal:    #71A7B3;  /* Canva — "Prep" phase, accents */
+    --bright-teal:  #28ACB8;  /* Canva — reserved for sparing emphasis */
+    /* Derived tints (not in Canva, math-derived for UI states) */
+    --magenta-soft: #F4DCE9;  /* light magenta for highlight rows */
+    --teal-soft:    #E0EBEE;  /* light teal for stat-row background */
+    --cream:        #FAFAF8;  /* subtle off-white page background */
+    --charcoal:     #2E2E2E;  /* body text */
+    /* Legacy aliases — kept for backwards compatibility with the rest of the CSS */
+    --eggplant:     #A36DA1;  /* was eggplant, now Canva mauve (Launch phase) */
+    --peacock:      #71A7B3;  /* was peacock, now Canva soft teal (Prep phase) */
+    --teal-light:   #65778D;  /* alias to slate-blue */
+    --dusty-blue:   #A36DA1;  /* italic "House" treatment — mauve replaces faint powder */
+    --dusty-rose:   #C64097;  /* alias to magenta */
+    --rose-light:   #F4DCE9;  /* alias to magenta-soft */
+    --soft-gray:    #D1D1D1;  /* alias to light-gray */
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background: var(--cream);
+    color: var(--charcoal);
+    line-height: 1.5;
+  }
+  h1, h2, h3, .display, .serif {
+    font-family: Georgia, 'Times New Roman', serif;
+  }
+
+  header.top {
+    background: var(--deep-navy);
+    color: var(--cream);
+    padding: 36px 48px;
+    border-bottom: 3px solid var(--mauve);
+  }
+  header.top .inner {
+    max-width: 1200px; margin: 0 auto;
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 16px;
+  }
+  header.top .title {
+    font-family: Georgia, serif;
+    font-size: 34px; font-weight: 400; line-height: 1.1;
+  }
+  header.top .title sup { font-size: 16px; vertical-align: super; }
+  header.top .tagline {
+    font-family: Georgia, serif;
+    font-style: italic; font-size: 16px;
+    color: var(--light-gray);  /* light gray sits calmly on navy — no contrast fight */
+    margin-top: 8px;
+    letter-spacing: 0.3px;
+    opacity: 0.85;
+  }
+  header.top .right { text-align: right; line-height: 1.3; }
+  header.top .prep-label {
+    font-size: 10px; font-weight: 600; letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--light-gray); opacity: 0.7;
+  }
+  header.top .prep-name {
+    font-family: Georgia, serif;
+    font-size: 30px; font-weight: 400;
+    color: var(--cream);
+    margin-top: 4px;
+    line-height: 1.1;
+  }
+  header.top .prep-by-line {
+    font-family: Georgia, serif;
+    font-size: 14px; font-weight: 400;
+    color: var(--cream);
+    margin-top: 10px;
+    opacity: 0.9;
+  }
+  header.top .prep-by-prefix {
+    font-style: italic;
+    color: var(--light-gray);
+    opacity: 0.75;
+  }
+  header.top .prep-by-line em {
+    font-family: Georgia, serif;
+    font-style: normal;
+    color: var(--mauve);
+  }
+
+  nav.tabs {
+    background: var(--deep-navy);
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+  }
+  nav.tabs .inner {
+    max-width: 1200px; margin: 0 auto;
+    display: flex; overflow-x: auto;
+  }
+  nav.tabs button {
+    flex: 0 0 auto;
+    padding: 16px 24px;
+    background: transparent;
+    color: var(--cream);
+    border: none;
+    cursor: pointer;
+    display: flex; align-items: center; gap: 8px;
+    font-weight: 400; font-size: 14px;
+    border-bottom: 3px solid transparent;
+    transition: all 0.2s;
+    font-family: inherit;
+    letter-spacing: 0.3px;
+  }
+  nav.tabs button:hover { background: rgba(255,255,255,0.05); }
+  nav.tabs button.active {
+    background: var(--cream);
+    color: var(--deep-navy);
+    font-weight: 600;
+    border-bottom-color: var(--mauve);
+  }
+  nav.tabs svg { width: 16px; height: 16px; }
+
+  main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 48px;
+  }
+  .panel { display: none; }
+  .panel.active { display: block; }
+
+  .property-header {
+    margin-bottom: 32px;
+    padding: 32px;
+    background: white;
+    border-radius: 4px;
+    border: 1px solid var(--soft-gray);
+    border-left: 4px solid var(--dusty-rose);
+  }
+  .property-header .top-row {
+    display: flex; justify-content: space-between; align-items: flex-start;
+    gap: 24px; flex-wrap: wrap; margin-bottom: 20px;
+  }
+  .property-header .left { flex: 1; min-width: 280px; }
+  .property-header .price-block { text-align: right; flex-shrink: 0; }
+  .property-header .price-lbl {
+    font-size: 11px; font-weight: 600; letter-spacing: 1.5px;
+    text-transform: uppercase; color: var(--mauve);
+  }
+  .property-header .price-val {
+    font-family: Georgia, serif;
+    font-size: 36px; font-weight: 400; color: var(--deep-navy); margin-top: 4px;
+    line-height: 1;
+  }
+
+  .eyebrow {
+    font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase;
+    color: var(--mauve); margin-bottom: 10px;
+  }
+  .property-title {
+    font-family: Georgia, serif;
+    font-size: 34px; font-weight: 400; line-height: 1.15; margin: 0 0 8px 0;
+    color: var(--deep-navy);
+  }
+  .property-loc {
+    display: flex; align-items: center; gap: 6px; color: var(--slate-blue); margin-bottom: 24px;
+    font-size: 14px;
+  }
+  .property-loc svg { width: 16px; height: 16px; }
+
+  .stats-row {
+    display: flex; gap: 24px;
+    padding: 16px 20px;
+    background: white;
+    border: 1px solid var(--soft-gray);
+    border-left: 3px solid var(--peacock);
+    border-radius: 4px;
+    margin-bottom: 20px;
+  }
+  .stat { display: flex; align-items: center; gap: 8px; }
+  .stat svg { width: 20px; height: 20px; color: var(--peacock); stroke-width: 1.5; }
+  .stat .v { font-weight: 700; font-size: 18px; color: var(--deep-navy); line-height: 1; }
+  .stat .l { font-size: 10px; color: var(--teal-light); text-transform: uppercase; letter-spacing: 1.2px; margin-top: 2px; }
+
+  /* Informational alert — calm, not alarming. Used for "compressed timeline" notices. */
+  .alert-box {
+    display: flex; gap: 14px;
+    padding: 20px 24px;
+    background: white;
+    color: var(--charcoal);
+    border: 1px solid var(--soft-gray);
+    border-left: 3px solid var(--slate-blue);
+    border-radius: 4px;
+    margin-bottom: 32px;
+  }
+  .alert-box svg { width: 20px; height: 20px; color: var(--slate-blue); flex-shrink: 0; margin-top: 2px; }
+  .alert-box .alert-title {
+    font-family: Georgia, serif;
+    font-size: 17px; font-weight: 400; color: var(--deep-navy); margin-bottom: 6px;
+  }
+  .alert-box .alert-body { font-size: 14px; line-height: 1.6; color: var(--charcoal); }
+  .alert-box .alert-body strong { color: var(--deep-navy); }
+
+  .method-intro {
+    background: white;
+    padding: 32px;
+    border-radius: 4px;
+    border: 1px solid var(--soft-gray);
+    border-left: 3px solid var(--mauve);
+  }
+  .method-intro .quote {
+    font-family: Georgia, serif;
+    font-style: italic; font-size: 22px; color: var(--deep-navy); line-height: 1.4; margin-bottom: 16px;
+  }
+  .method-intro p { font-size: 15px; line-height: 1.7; color: var(--charcoal); margin: 0; }
+
+  .customize {
+    margin-top: 32px; padding: 24px;
+    background: white;
+    border-radius: 4px; border: 1px solid var(--soft-gray);
+  }
+  .customize .lbl-section {
+    font-size: 11px; font-weight: 600; letter-spacing: 1.5px;
+    text-transform: uppercase; color: var(--mauve); margin-bottom: 16px;
+  }
+  .customize .grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
+  }
+  .field .lbl {
+    font-size: 10px; font-weight: 600; letter-spacing: 1.2px;
+    text-transform: uppercase; color: var(--teal-light); margin-bottom: 6px;
+  }
+  .field input {
+    width: 100%; padding: 10px 12px;
+    border: 1px solid var(--soft-gray); border-radius: 4px;
+    font-size: 14px; font-family: inherit; color: var(--charcoal);
+    background: var(--cream);
+  }
+  .field input:focus { outline: 2px solid var(--peacock); outline-offset: -2px; border-color: var(--peacock); }
+
+  .section-title { margin-bottom: 8px; }
+  .section-title h1 {
+    font-family: Georgia, serif;
+    font-size: 34px; font-weight: 400; color: var(--deep-navy);
+    margin: 8px 0 8px 0; line-height: 1.15;
+  }
+  .section-title .sub { font-size: 15px; color: var(--teal-light); font-style: italic; }
+
+  .nine-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 24px;
+  }
+  .nine-card {
+    background: white; padding: 18px 20px;
+    border-radius: 4px;
+    border: 1px solid var(--soft-gray);
+    position: relative;
+  }
+  .nine-card .card-head {
+    display: flex; align-items: center; gap: 12px;
+    margin-bottom: 8px;
+  }
+  .nine-card .num-badge {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center; justify-content: center;
+    width: 32px; height: 32px;
+    background: var(--mauve);
+    color: white;
+    font-family: Georgia, serif;
+    font-size: 16px; font-weight: 400;
+    border-radius: 50%;
+  }
+  .nine-card svg.icon { width: 18px; height: 18px; color: var(--slate-blue); stroke-width: 1.5; flex-shrink: 0; }
+  .nine-card h3 {
+    font-size: 15px; font-weight: 600; margin: 0; color: var(--deep-navy);
+    line-height: 1.3; flex: 1;
+  }
+  .nine-card p { font-size: 13px; line-height: 1.55; color: var(--charcoal); margin: 0; }
+
+  /* NET SHEET — 3-column side-by-side detailed breakdown */
+  .net-controls {
+    margin-top: 24px; padding: 22px 24px;
+    background: white; border: 1px solid var(--soft-gray);
+    border-left: 3px solid var(--slate-blue);
+    border-radius: 4px;
+  }
+  .net-controls .lbl-section {
+    font-size: 11px; font-weight: 600; letter-spacing: 1.5px;
+    text-transform: uppercase; color: var(--slate-blue); margin-bottom: 14px;
+  }
+  .net-controls .ctrl-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px;
+  }
+  .ctrl-field .lbl {
+    font-size: 11px; color: var(--slate-blue); margin-bottom: 4px; line-height: 1.3;
+  }
+  .ctrl-field input {
+    width: 100%; padding: 8px 10px;
+    border: 1px solid var(--soft-gray); border-radius: 3px;
+    font-size: 14px; font-family: inherit; color: var(--deep-navy);
+    background: var(--cream);
+  }
+  .ctrl-field input:focus { outline: 2px solid var(--mauve); outline-offset: -2px; border-color: var(--mauve); }
+
+  /* NET SHEET TABLE — one label column + 3 scenario value columns */
+  .net-table-wrap {
+    margin-top: 24px;
+    background: white;
+    border: 1px solid var(--soft-gray);
+    border-radius: 4px;
+    overflow-x: auto;
+  }
+  table.net-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-variant-numeric: tabular-nums;
+    table-layout: fixed;  /* let us size columns deterministically */
+  }
+  table.net-table col.label-col { width: 52%; }
+  table.net-table col.scenario-col { width: 16%; }
+  table.net-table thead th {
+    padding: 22px 14px 20px;
+    background: var(--deep-navy);
+    color: var(--cream);
+    text-align: center;
+    vertical-align: middle;
+    border-right: 1px solid rgba(255,255,255,0.12);
+  }
+  table.net-table thead th:first-child {
+    text-align: left;
+    background: var(--deep-navy);
+    color: var(--cream);
+  }
+  table.net-table thead th:last-child { border-right: none; }
+  table.net-table thead th.highlight {
+    background: var(--mauve);
+  }
+  table.net-table .col-label {
+    font-size: 11px; font-weight: 600; letter-spacing: 1.5px;
+    text-transform: uppercase; opacity: 0.95;
+    margin-bottom: 8px;
+  }
+  table.net-table .col-price {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: -0.3px;
+    font-variant-numeric: tabular-nums lining-nums;
+    white-space: nowrap;
+  }
+
+  table.net-table .section-row td {
+    padding: 14px 18px 8px 18px;
+    background: var(--cream);
+    border-top: 1px solid var(--soft-gray);
+    border-bottom: 1px solid var(--soft-gray);
+  }
+  table.net-table .section-row td.section-label {
+    font-family: Georgia, serif;
+    font-size: 11px; font-weight: 600; letter-spacing: 1.5px;
+    text-transform: uppercase; color: var(--slate-blue);
+  }
+
+  table.net-table tbody td {
+    padding: 11px 16px;
+    border-bottom: 1px solid var(--soft-gray);
+    border-right: 1px solid var(--soft-gray);
+    font-size: 14px;
+    vertical-align: middle;
+  }
+  table.net-table tbody td:last-child { border-right: none; }
+  table.net-table tbody td.row-label {
+    color: var(--charcoal);
+    line-height: 1.35;
+    vertical-align: top;
+  }
+  table.net-table tbody td.row-label .ns-note {
+    display: block;
+    font-size: 11px; color: var(--slate-blue);
+    font-style: italic; margin-top: 2px;
+    font-weight: 400;
+  }
+  table.net-table tbody td.value {
+    text-align: center;
+    color: var(--deep-navy);
+    font-weight: 500;
+    white-space: nowrap;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-variant-numeric: tabular-nums lining-nums;
+    letter-spacing: -0.2px;
+  }
+  table.net-table tbody td.value.minus { color: var(--charcoal); }
+  table.net-table tbody td.value.fillable {
+    color: var(--mauve);
+    font-style: italic;
+    font-size: 12px;
+    text-align: center;
+  }
+  table.net-table tbody tr.subtotal td {
+    background: #FAFAF8;
+    font-weight: 600;
+  }
+  table.net-table tbody tr.subtotal td.row-label,
+  table.net-table tbody tr.subtotal td.value {
+    color: var(--deep-navy);
+    font-weight: 600;
+  }
+
+  table.net-table tfoot td {
+    padding: 22px 16px;
+    background: var(--deep-navy);
+    color: var(--cream);
+    vertical-align: middle;
+    border-right: 1px solid rgba(255,255,255,0.12);
+  }
+  table.net-table tfoot td:last-child { border-right: none; }
+  table.net-table tfoot td.row-label {
+    text-align: left;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  }
+  table.net-table tfoot td.value {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-variant-numeric: tabular-nums lining-nums;
+    letter-spacing: -0.3px;
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+    line-height: 1;
+  }
+
+  .footnote {
+    margin-top: 20px; font-size: 12px; color: var(--slate-blue);
+    line-height: 1.6; font-style: italic;
+  }
+
+  .cal-wrap {
+    margin-top: 32px;
+    background: white;
+    border-radius: 4px;
+    border: 1px solid var(--soft-gray);
+    overflow: hidden;
+  }
+  .cal-head {
+    padding: 16px 24px;
+    background: var(--deep-navy);
+    color: var(--cream);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .cal-head .month-title {
+    font-family: Georgia, serif;
+    font-size: 22px;
+    font-weight: 400;
+  }
+  .cal-legend {
+    display: flex;
+    gap: 16px;
+    font-size: 10px;
+    flex-wrap: wrap;
+    letter-spacing: 1px;
+  }
+  .cal-legend .item {
+    display: flex; align-items: center; gap: 6px;
+    text-transform: uppercase;
+  }
+  .cal-legend .dot {
+    width: 10px; height: 10px; border-radius: 50%;
+  }
+  .cal-legend .dot.prep { background: var(--peacock); }
+  .cal-legend .dot.launch { background: var(--eggplant); }
+  .cal-legend .dot.live { background: var(--dusty-rose); }
+  .cal-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    border-top: 1px solid var(--soft-gray);
+  }
+  .cal-dow {
+    padding: 10px 8px;
+    background: var(--cream);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: var(--peacock);
+    text-align: center;
+    border-right: 1px solid var(--soft-gray);
+    border-bottom: 1px solid var(--soft-gray);
+  }
+  .cal-dow:last-child { border-right: none; }
+  .cal-cell {
+    min-height: 96px;
+    padding: 6px 8px;
+    border-right: 1px solid var(--soft-gray);
+    border-bottom: 1px solid var(--soft-gray);
+    background: white;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .cal-cell:nth-child(7n) { border-right: none; }
+  .cal-cell.dim {
+    background: #FBFAF6;
+    color: var(--soft-gray);
+  }
+  .cal-cell.today {
+    background: #F0EFEA;
+    box-shadow: inset 0 0 0 2px var(--peacock);
+  }
+  .cal-cell.active-x {
+    background: var(--rose-light);
+    box-shadow: inset 0 0 0 2px var(--dusty-rose);
+  }
+  .cal-daynum {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--charcoal);
+  }
+  .cal-cell.dim .cal-daynum { color: var(--soft-gray); font-weight: 400; }
+  .cal-event {
+    font-size: 10px;
+    line-height: 1.3;
+    padding: 3px 6px;
+    border-radius: 3px;
+    color: white;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  .cal-event.prep { background: var(--peacock); }
+  .cal-event.launch { background: var(--eggplant); }
+  .cal-event.live { background: var(--dusty-rose); }
+  .cal-event.star {
+    background: var(--dusty-rose);
+    font-weight: 700;
+    box-shadow: 0 0 0 2px var(--rose-light);
+  }
+  .cal-event svg { width: 10px; height: 10px; flex-shrink: 0; }
+  .cal-today-marker {
+    position: absolute;
+    top: 4px; right: 6px;
+    font-size: 9px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--peacock);
+    letter-spacing: 0.5px;
+  }
+
+  .timeline-list { margin-top: 32px; }
+  .tl-row { display: flex; gap: 20px; margin-bottom: 16px; align-items: flex-start; }
+  .tl-date { flex: 0 0 120px; text-align: right; }
+  .tl-date .d { font-family: Georgia, serif; font-weight: 400; font-size: 14px; color: var(--deep-navy); }
+  .tl-icon-col { flex: 0 0 40px; display: flex; flex-direction: column; align-items: center; }
+  .tl-icon {
+    width: 36px; height: 36px; border-radius: 50%;
+    color: white; display: flex; align-items: center; justify-content: center;
+  }
+  .tl-icon svg { width: 16px; height: 16px; }
+  .tl-icon.prep { background: var(--peacock); }
+  .tl-icon.launch { background: var(--eggplant); }
+  .tl-icon.live { background: var(--dusty-rose); }
+  .tl-icon.star { background: var(--dusty-rose); box-shadow: 0 0 0 4px var(--rose-light); }
+  .tl-line { width: 2px; flex: 1; background: var(--soft-gray); margin-top: 4px; min-height: 24px; }
+  .tl-content { flex: 1; padding-bottom: 16px; }
+  .tl-content .ms { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .tl-content .ms-name { font-weight: 600; font-size: 15px; color: var(--deep-navy); }
+  .tl-content .ms-tag {
+    font-size: 10px; font-weight: 700; padding: 3px 8px;
+    background: var(--dusty-rose); color: white; border-radius: 3px; letter-spacing: 1.2px;
+  }
+  .tl-content .desc { font-size: 13px; color: var(--charcoal); margin-top: 4px; line-height: 1.5; }
+  .tl-content .own { font-size: 11px; color: var(--teal-light); margin-top: 4px; letter-spacing: 0.3px; }
+  .tl-content .own strong { color: var(--eggplant); }
+
+  .wt-note {
+    margin-top: 32px;
+    padding: 18px 22px;
+    background: white;
+    border: 1px solid var(--soft-gray);
+    border-left: 3px solid var(--peacock);
+    border-radius: 4px;
+    margin-bottom: 32px;
+    font-size: 13px; color: var(--charcoal); line-height: 1.6;
+  }
+  /* ============================================================
+     WALKTHROUGH TAB — Home Features Sheet structure
+     ============================================================ */
+  .wt-intro-note {
+    background: white;
+    border: 1px solid var(--soft-gray);
+    border-left: 3px solid var(--slate-blue);
+    border-radius: 4px;
+    padding: 16px 20px;
+    font-size: 14px; color: var(--charcoal); line-height: 1.55;
+    margin-bottom: 24px;
+  }
+  .wt-intro-note strong { color: var(--deep-navy); }
+
+  .wt-area-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 20px;
+  }
+  .wt-area-card {
+    background: white; padding: 22px 24px;
+    border-radius: 4px; border: 1px solid var(--soft-gray);
+    border-top: 3px solid var(--mauve);
+  }
+  .wt-area-card h3 {
+    font-family: Georgia, serif;
+    font-size: 19px; font-weight: 400; color: var(--deep-navy);
+    margin: 0 0 14px 0;
+  }
+  .wt-chip-group { margin-bottom: 12px; }
+  .wt-chip-group .chip-label {
+    font-size: 11px; font-weight: 600; letter-spacing: 1.2px;
+    text-transform: uppercase; color: var(--slate-blue);
+    margin-bottom: 6px;
+  }
+  .wt-chip-row { display: flex; flex-wrap: wrap; gap: 6px; }
+  .wt-chip {
+    display: inline-block;
+    padding: 6px 12px;
+    background: var(--cream);
+    border: 1px solid var(--soft-gray);
+    border-radius: 999px;
+    font-size: 12px; color: var(--charcoal);
+    cursor: pointer; user-select: none;
+    transition: all 0.15s;
+    line-height: 1.2;
+  }
+  .wt-chip:hover { border-color: var(--mauve); background: white; }
+  .wt-chip.selected {
+    background: var(--mauve); color: white;
+    border-color: var(--mauve); font-weight: 500;
+  }
+  .wt-area-card .wt-text-input { margin-top: 10px; }
+  .wt-area-card .wt-text-input label {
+    display: block;
+    font-size: 11px; font-weight: 600; letter-spacing: 1px;
+    text-transform: uppercase; color: var(--slate-blue);
+    margin-bottom: 4px;
+  }
+  .wt-area-card .wt-text-input input {
+    width: 100%;
+    padding: 7px 10px;
+    border: 1px solid var(--soft-gray); border-radius: 3px;
+    font-size: 13px; font-family: inherit; color: var(--deep-navy);
+    background: var(--cream);
+  }
+  .wt-area-card .wt-text-input input:focus {
+    outline: 2px solid var(--mauve); outline-offset: -2px; border-color: var(--mauve);
+  }
+  .wt-area-card .wt-notes { margin-top: 12px; }
+  .wt-area-card .wt-notes-label {
+    font-size: 11px; font-weight: 600; letter-spacing: 1px;
+    text-transform: uppercase; color: var(--slate-blue);
+    margin-bottom: 4px;
+  }
+  .wt-area-card .wt-notes textarea {
+    width: 100%; min-height: 60px;
+    padding: 8px 10px;
+    border: 1px solid var(--soft-gray); border-radius: 3px;
+    font-family: inherit; font-size: 13px;
+    color: var(--charcoal); background: var(--cream);
+    resize: vertical; line-height: 1.5;
+  }
+  .wt-area-card .wt-notes textarea::placeholder {
+    color: var(--slate-blue); font-style: italic; opacity: 0.7;
+  }
+
+  /* Additional bedrooms — compact grid */
+  .wt-bedroom-section, .wt-systems-section {
+    margin-top: 28px;
+    background: white;
+    border-radius: 4px;
+    border: 1px solid var(--soft-gray);
+    border-top: 3px solid var(--mauve);
+    padding: 22px 24px;
+  }
+  .wt-bedroom-section h3, .wt-systems-section h3 {
+    font-family: Georgia, serif;
+    font-size: 19px; font-weight: 400; color: var(--deep-navy);
+    margin: 0 0 14px 0;
+  }
+  .wt-bedroom-table { width: 100%; border-collapse: collapse; }
+  .wt-bedroom-table th {
+    text-align: left;
+    font-size: 11px; font-weight: 600; letter-spacing: 1.2px;
+    text-transform: uppercase; color: var(--slate-blue);
+    padding: 8px 10px;
+    border-bottom: 1px solid var(--soft-gray);
+    vertical-align: bottom;
+  }
+  .wt-bedroom-table th.bd-col {
+    text-align: center;
+    color: var(--deep-navy);
+    font-family: Georgia, serif;
+    font-size: 13px; font-weight: 400; letter-spacing: 0;
+    text-transform: none;
+  }
+  .wt-bedroom-table td {
+    padding: 8px 10px;
+    border-bottom: 1px solid var(--soft-gray);
+    font-size: 13px; color: var(--charcoal);
+  }
+  .wt-bedroom-table td.attr-name { font-weight: 500; color: var(--charcoal); }
+  .wt-bedroom-table td.bd-cell { text-align: center; }
+  .wt-bedroom-table td.bd-text input {
+    width: 100%;
+    padding: 4px 6px;
+    border: 1px solid var(--soft-gray); border-radius: 3px;
+    font-size: 12px; font-family: inherit;
+    background: var(--cream); color: var(--deep-navy);
+  }
+  .wt-bd-checkbox {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 22px; height: 22px;
+    border: 1px solid var(--soft-gray);
+    border-radius: 3px;
+    cursor: pointer;
+    background: var(--cream);
+    transition: all 0.15s;
+  }
+  .wt-bd-checkbox.checked {
+    background: var(--mauve); border-color: var(--mauve); color: white;
+  }
+  .wt-bd-checkbox.checked::after { content: '✓'; font-size: 14px; line-height: 1; }
+
+  .wt-system-row {
+    display: grid; grid-template-columns: 80px 1fr;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--soft-gray);
+    gap: 12px;
+  }
+  .wt-system-row:last-child { border-bottom: none; }
+  .wt-system-row .sys-label {
+    font-size: 13px; font-weight: 600; color: var(--deep-navy);
+  }
+
+  .wt-hoa-garage {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
+    margin-top: 16px;
+  }
+  .wt-hoa-garage .wt-mini-card {
+    background: var(--cream);
+    border: 1px solid var(--soft-gray);
+    border-radius: 4px;
+    padding: 14px 16px;
+  }
+  .wt-mini-card .mini-label {
+    font-size: 11px; font-weight: 600; letter-spacing: 1px;
+    text-transform: uppercase; color: var(--slate-blue);
+    margin-bottom: 8px;
+  }
+  .wt-mini-card .mini-row {
+    display: flex; gap: 10px; align-items: center;
+    font-size: 13px;
+  }
+  .wt-mini-card input[type="text"], .wt-mini-card input[type="number"] {
+    flex: 1; padding: 6px 8px;
+    border: 1px solid var(--soft-gray);
+    border-radius: 3px;
+    font-size: 13px; font-family: inherit; color: var(--deep-navy);
+    background: white;
+  }
+  .neighborhood {
+    margin-top: 32px; padding: 28px;
+    background: white;
+    border-radius: 4px; border: 1px solid var(--soft-gray);
+    border-left: 3px solid var(--peacock);
+  }
+  .neighborhood .lbl-section {
+    font-size: 11px; font-weight: 600; letter-spacing: 1.5px;
+    text-transform: uppercase; color: var(--peacock); margin-bottom: 14px;
+  }
+  .neighborhood p { font-size: 14px; line-height: 1.75; color: var(--charcoal); margin: 0; }
+  .neighborhood strong { color: var(--deep-navy); }
+
+  .send-team-block {
+    margin-top: 32px; padding: 24px 28px;
+    background: var(--deep-navy);
+    color: var(--cream);
+    border-radius: 4px;
+    display: flex; align-items: center; justify-content: space-between; gap: 24px;
+    flex-wrap: wrap;
+  }
+  .send-team-block .send-team-copy { flex: 1; min-width: 240px; }
+  .send-team-block .lbl-section {
+    font-size: 11px; font-weight: 600; letter-spacing: 1.5px;
+    text-transform: uppercase; color: var(--mauve); margin-bottom: 6px;
+  }
+  .send-team-block p { font-size: 14px; line-height: 1.5; margin: 0; color: var(--cream); opacity: 0.9; }
+  .send-team-btn {
+    background: var(--mauve);
+    color: white;
+    border: none;
+    padding: 14px 26px;
+    border-radius: 999px;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 13px; font-weight: 600;
+    letter-spacing: 1px; text-transform: uppercase;
+    cursor: pointer;
+    display: flex; align-items: center; gap: 10px;
+    transition: transform 0.15s, box-shadow 0.15s, background 0.15s;
+    flex-shrink: 0;
+  }
+  .send-team-btn:hover {
+    background: var(--magenta);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 16px rgba(198,64,151,0.3);
+  }
+  .send-team-btn svg { width: 16px; height: 16px; }
+
+  /* PREP TAB — agent notes section + standard checklist */
+  .prep-section-header {
+    font-size: 24px; font-weight: 400; color: var(--deep-navy);
+    margin: 32px 0 4px 0;
+  }
+  .prep-section-sub {
+    font-size: 14px; color: var(--teal-light); font-style: italic;
+    margin: 0 0 16px 0;
+  }
+  .prep-notes-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 20px;
+    margin-bottom: 16px;
+  }
+  .prep-notes-card {
+    background: white; padding: 22px;
+    border-radius: 4px; border: 1px solid var(--soft-gray);
+    border-left: 3px solid var(--dusty-rose);
+  }
+  .prep-notes-title {
+    font-family: Georgia, serif;
+    font-size: 17px; font-weight: 400; color: var(--deep-navy);
+    margin-bottom: 10px; padding-bottom: 8px;
+    border-bottom: 1px solid var(--rose-light);
+  }
+  .prep-notes-card textarea {
+    width: 100%; min-height: 140px; border: none; resize: vertical;
+    font-family: inherit; font-size: 14px; color: var(--charcoal);
+    background: transparent; outline: none; padding: 0; line-height: 1.6;
+  }
+  .prep-notes-card textarea::placeholder { color: var(--soft-gray); font-style: italic; }
+  .prep-notes-card.mirror { background: var(--cream); border-left-color: var(--slate-blue); }
+  .prep-notes-mirror {
+    min-height: 140px;
+    font-family: inherit; font-size: 14px; color: var(--charcoal);
+    line-height: 1.6;
+    white-space: pre-wrap;
+  }
+  .prep-notes-mirror.empty {
+    color: var(--slate-blue); font-style: italic;
+  }
+
+  .wt-focus-header {
+    font-size: 22px; font-weight: 400; color: var(--deep-navy);
+    margin: 40px 0 4px 0; font-family: Georgia, serif;
+  }
+  .wt-focus-sub {
+    font-size: 14px; color: var(--slate-blue);
+    margin: 0 0 20px 0; line-height: 1.5;
+  }
+
+  .checklist-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 20px;
+  }
+  .checklist-area {
+    background: white; padding: 24px;
+    border-radius: 4px; border: 1px solid var(--soft-gray);
+    border-top: 3px solid var(--soft-teal);
+  }
+  .checklist-area h3 {
+    font-family: Georgia, serif;
+    font-size: 18px; font-weight: 400; color: var(--deep-navy);
+    margin: 0 0 14px 0;
+    line-height: 1.2;
+  }
+  .checklist-area ul { margin: 0; padding: 0; list-style: none; }
+  .checklist-area li {
+    display: flex; gap: 10px; padding: 7px 0;
+    font-size: 15px; color: var(--charcoal); line-height: 1.55;
+  }
+  .checklist-area li:before {
+    content: "☐";
+    color: var(--mauve);
+    font-size: 16px;
+    flex-shrink: 0;
+    line-height: 1.4;
+  }
+
+  .vendors-block { margin-top: 40px; }
+  .vendors-block h3 {
+    font-size: 24px; font-weight: 400; color: var(--deep-navy); margin: 0 0 4px 0;
+  }
+  .vendor-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 16px; }
+  .vendor-slot {
+    background: white; padding: 18px;
+    border-radius: 4px; border: 1px solid var(--soft-gray);
+  }
+  .vendor-slot .cat {
+    font-size: 10px; font-weight: 600; letter-spacing: 1.2px;
+    text-transform: uppercase; color: var(--peacock); margin-bottom: 4px;
+  }
+  .vendor-slot .v { font-size: 13px; color: var(--soft-gray); font-style: italic; }
+
+  footer.bottom {
+    background: var(--deep-navy); color: var(--cream);
+    padding: 32px 48px; margin-top: 64px;
+    border-top: 3px solid var(--mauve);
+  }
+  footer.bottom .inner {
+    max-width: 1200px; margin: 0 auto;
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 16px; font-size: 13px;
+  }
+  footer.bottom .tag {
+    font-family: Georgia, serif;
+    font-style: italic; font-size: 16px; color: var(--light-gray);
+    letter-spacing: 0.3px;
+    opacity: 0.85;
+  }
+  footer.bottom em.script {
+    font-family: Georgia, serif;
+    font-style: normal;
+    font-size: inherit;
+    color: var(--cream);
+  }
+  footer.bottom .opacity { opacity: 0.75; }
+
+  @media (max-width: 768px) {
+    main { padding: 24px; }
+    header.top { padding: 24px; }
+    .property-header .top-row { flex-direction: column; }
+    .property-header .price-block { text-align: left; }
+    .nine-grid, .prep-notes-grid, .checklist-grid, .wt-area-grid, .vendor-grid { grid-template-columns: 1fr; }
+    .wt-hoa-garage { grid-template-columns: 1fr; }
+    .wt-bedroom-table { font-size: 11px; }
+    .wt-bedroom-table th, .wt-bedroom-table td { padding: 6px 4px; }
+    table.net-table thead th { padding: 14px 8px; }
+    table.net-table .col-price { font-size: 18px; }
+    table.net-table .col-label { font-size: 10px; letter-spacing: 1.2px; }
+    table.net-table tbody td { padding: 9px 8px; font-size: 12px; }
+    table.net-table tbody td.row-label .ns-note { font-size: 10px; }
+    table.net-table tfoot td { padding: 14px 8px; }
+    table.net-table tfoot td.row-label { font-size: 11px; letter-spacing: 1px; }
+    table.net-table tfoot td.value { font-size: 16px; }
+    .net-controls .ctrl-grid { grid-template-columns: 1fr 1fr; }
+    .customize .grid { grid-template-columns: 1fr; }
+    .property-title { font-size: 28px; }
+    .cal-cell { min-height: 64px; padding: 4px; }
+    .cal-event { font-size: 9px; padding: 2px 4px; }
+    .cal-event svg { display: none; }
+    .cal-dow { font-size: 9px; padding: 6px 2px; }
+  }
+
+  /* ============================================================
+     PRINT TO PDF — floating button + @media print rules
+     ============================================================ */
+  .print-btn {
+    position: fixed;
+    bottom: 28px; right: 28px;
+    z-index: 1000;
+    background: var(--mauve);
+    color: white;
+    border: none;
+    padding: 14px 22px;
+    border-radius: 999px;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 13px; font-weight: 600;
+    letter-spacing: 1px; text-transform: uppercase;
+    cursor: pointer;
+    box-shadow: 0 4px 16px rgba(52,63,85,0.25);
+    display: flex; align-items: center; gap: 8px;
+    transition: transform 0.15s, box-shadow 0.15s;
+  }
+  .print-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(52,63,85,0.35);
+  }
+  .print-btn svg { width: 16px; height: 16px; }
+
+  @media print {
+    /* Force background colors to print (Chromium-based browsers) */
+    * {
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+      color-adjust: exact !important;
+    }
+
+    /* Page setup */
+    @page {
+      size: letter;
+      margin: 0.5in;
+    }
+
+    body {
+      background: white;
+      font-size: 11pt;
+    }
+
+    /* Hide interactive UI */
+    .print-btn,
+    .send-team-block,
+    nav.tabs,
+    .customize,
+    .net-controls,
+    .property-header .price-block input,
+    .field input,
+    .ctrl-field input {
+      display: none !important;
+    }
+
+    /* Reveal ALL panels — stack them vertically */
+    .panel { display: block !important; }
+    main { padding: 0 !important; max-width: none; }
+
+    /* Page breaks between major sections */
+    section.panel { page-break-before: always; }
+    section.panel:first-of-type { page-break-before: avoid; }
+    section.panel#panel-prep .checklist-area { page-break-inside: avoid; }
+    section.panel#panel-walkthrough .wt-area-card { page-break-inside: avoid; }
+    .nine-card,
+    .net-table tr,
+    .tl-row { page-break-inside: avoid; }
+
+    /* Compact spacing for print */
+    header.top, footer.bottom {
+      padding: 16px 24px;
+      page-break-after: avoid;
+    }
+    header.top .title { font-size: 22pt; }
+    header.top .prep-name { font-size: 20pt; }
+    header.top .prep-by-line { font-size: 11pt; }
+    .property-title { font-size: 20pt; }
+    .section-title h1 { font-size: 18pt; margin-bottom: 12pt; }
+
+    /* Net table — make sure it prints fully */
+    table.net-table { font-size: 9pt; }
+    table.net-table thead th { padding: 10pt 6pt; }
+    table.net-table .col-price { font-size: 14pt; }
+    table.net-table .col-label { font-size: 8pt; }
+    table.net-table tbody td { padding: 6pt 8pt; font-size: 9pt; }
+    table.net-table tfoot td.value { font-size: 13pt; }
+    table.net-table tbody td.row-label .ns-note { font-size: 7pt; }
+
+    /* Calendar — keep readable */
+    .cal-cell { min-height: 50pt; }
+    .cal-event { font-size: 7pt; }
+
+    /* Checklists — single column for print */
+    .checklist-grid { grid-template-columns: 1fr 1fr !important; }
+    .checklist-area li { font-size: 10pt; padding: 3pt 0; }
+    .checklist-area h3 { font-size: 12pt; }
+
+    /* Nine cards — tighter grid */
+    .nine-grid { gap: 8pt; }
+    .nine-card { padding: 10pt 12pt; }
+    .nine-card h3 { font-size: 11pt; }
+    .nine-card p { font-size: 9pt; }
+
+    /* Hide the "Customize Live" note that points to interactive features */
+    .customize ~ div { display: none; }
+
+    /* Walkthrough area cards — preserve typed notes */
+    .wt-area-card textarea {
+      border: 1px solid var(--soft-gray);
+      padding: 6pt;
+      min-height: 50pt;
+      font-size: 9pt;
+    }
+    .prep-notes-card textarea {
+      border: 1px solid var(--soft-gray);
+      padding: 6pt;
+      min-height: 70pt;
+      font-size: 9pt;
+    }
+
+    /* Make sure Story House navy/cream prints with real colors */
+    header.top, footer.bottom,
+    table.net-table thead th,
+    table.net-table tfoot td { color-adjust: exact; }
+  }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="inner">
+    <div>
+      <div class="title">The BestSeller Method<sup>™</sup></div>
+      <div class="tagline">Designed, Not Default.</div>
+    </div>
+    <div class="right">
+      <div class="prep-label">Prepared For</div>
+      <div class="prep-name">The Smiths</div>
+      <div class="prep-by-line"><span class="prep-by-prefix">by</span> Sasha Tripp · Story House <em>Real Estate</em></div>
+    </div>
+  </div>
+</header>
+
+<nav class="tabs">
+  <div class="inner">
+    <button class="tab-btn active" data-tab="property">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      Property
+    </button>
+    <button class="tab-btn" data-tab="method">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/></svg>
+      The Method
+    </button>
+    <button class="tab-btn" data-tab="netsheet">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+      Net Sheet
+    </button>
+    <button class="tab-btn" data-tab="timeline">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+      Timeline
+    </button>
+    <button class="tab-btn" data-tab="walkthrough">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/></svg>
+      Walkthrough
+    </button>
+    <button class="tab-btn" data-tab="prep">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="9 12 12 15 16 9"/></svg>
+      Prep
+    </button>
+  </div>
+</nav>
+
+<main>
+
+  <section class="panel active" id="panel-property">
+    <div class="property-header">
+      <div class="top-row">
+        <div class="left">
+          <div class="eyebrow">Listing Walkthrough</div>
+          <h1 class="property-title">5505 Watervale Drive</h1>
+          <div class="property-loc">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 7-8 13-8 13s-8-6-8-13a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>Crozet, VA 22932 · Chesterfield Landing</span>
+          </div>
+        </div>
+        <div class="price-block">
+          <div class="price-lbl">Strategic List Price</div>
+          <div class="price-val" id="listPriceDisplay">$900,000</div>
+        </div>
+      </div>
+      <div class="stats-row">
+        <div class="stat">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4v16"/><path d="M2 8h18a2 2 0 0 1 2 2v10"/><path d="M2 17h20"/><path d="M6 8v9"/></svg>
+          <div><div class="v">4</div><div class="l">Beds</div></div>
+        </div>
+        <div class="stat">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6 6.5 3.5a1.5 1.5 0 0 0-1-.5C4.683 3 4 3.683 4 4.5V17a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/><line x1="10" y1="5" x2="8" y2="7"/><line x1="2" y1="12" x2="22" y2="12"/><line x1="7" y1="19" x2="7" y2="21"/><line x1="17" y1="19" x2="17" y2="21"/></svg>
+          <div><div class="v">3</div><div class="l">Baths</div></div>
+        </div>
+        <div class="stat">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/></svg>
+          <div><div class="v">3,000</div><div class="l">Sq Ft</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="alert-box">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+      <div>
+        <div class="alert-title">Compressed Timeline</div>
+        <div class="alert-body">Walkthrough is May 7 and Active Thursday is May 14 — that's a 7-day runway vs. our standard 14-day. Doable, but listing docs need to be signed by Saturday May 9 and photos shot Sunday May 10. We'll move efficiently and the marketing punch is slightly reduced compared to a full 2-week prep.</div>
+      </div>
+    </div>
+
+    <div class="method-intro">
+      <div class="quote">Selling a home isn't a checklist. It's a method.</div>
+      <p>The BestSeller Method™ is the systematic process Story House uses on every listing. It's how we move from your front door to "sold" with intention at every step — pricing, prep, photography, marketing, showings, and offers. This dashboard walks you through exactly what happens, when it happens, and what the numbers look like across three sale scenarios.</p>
+    </div>
+
+    <div class="customize">
+      <div class="lbl-section">Customize Live</div>
+      <div class="grid">
+        <div class="field">
+          <div class="lbl">Strategic List Price</div>
+          <input type="number" id="inListPrice" value="900000" />
+        </div>
+        <div class="field">
+          <div class="lbl">Active Thursday</div>
+          <input type="date" id="inActive" value="2026-05-14" />
+        </div>
+      </div>
+      <div style="font-size:12px;color:var(--slate-blue);margin-top:14px;font-style:italic;">Closing costs, commission, payoff, and other net sheet inputs are editable on the Net Sheet tab.</div>
+    </div>
+  </section>
+
+  <section class="panel" id="panel-method">
+    <div class="section-title">
+      <div class="eyebrow">Our Process</div>
+      <h1>The Nine-Step Method</h1>
+      <div class="sub">Designed, not default. Every listing follows this framework.</div>
+    </div>
+    <div class="nine-grid" id="nineGrid"></div>
+  </section>
+
+  <section class="panel" id="panel-netsheet">
+    <div class="section-title">
+      <div class="eyebrow">Bottom Line</div>
+      <h1>Your Net Sheet</h1>
+      <div class="sub">Three sale price scenarios with full breakdown. Adjust any value on the fly.</div>
+    </div>
+
+    <!-- Live-editable inputs that affect ALL three columns -->
+    <div class="net-controls">
+      <div class="lbl-section">Adjust on the fly — values flow into all three columns</div>
+      <div class="ctrl-grid">
+        <div class="ctrl-field">
+          <div class="lbl">Listing Commission %</div>
+          <input type="number" id="inCommissionPct" value="3" step="0.1" />
+        </div>
+        <div class="ctrl-field">
+          <div class="lbl">Buyer Broker Comp %</div>
+          <input type="number" id="inBuyerBrokerPct" value="3" step="0.1" />
+        </div>
+        <div class="ctrl-field">
+          <div class="lbl">Seller Concessions ($)</div>
+          <input type="number" id="inConcessions" value="0" step="500" />
+        </div>
+        <div class="ctrl-field">
+          <div class="lbl">Mortgage Payoff ($)</div>
+          <input type="number" id="inPayoff" value="700000" step="1000" />
+        </div>
+        <div class="ctrl-field">
+          <div class="lbl">Home Warranty (est.)</div>
+          <input type="number" id="inWarranty" value="600" step="50" />
+        </div>
+        <div class="ctrl-field">
+          <div class="lbl">WDI Inspection (max)</div>
+          <input type="number" id="inWDI" value="1000" step="50" />
+        </div>
+        <div class="ctrl-field">
+          <div class="lbl">Property Tax Proration</div>
+          <input type="number" id="inTaxProration" value="1200" step="100" />
+        </div>
+        <div class="ctrl-field">
+          <div class="lbl">HOA Special Assessment</div>
+          <input type="number" id="inHOASpecial" value="0" step="100" />
+        </div>
+      </div>
+    </div>
+
+    <div class="net-table-wrap" id="netTableWrap"></div>
+
+    <div class="footnote">All figures are estimates based on standard Albemarle County / Virginia closing costs. Mortgage payoff requires verification with the lender. Pro-rations depend on closing date. Actual proceeds are finalized on the closing settlement statement.</div>
+  </section>
+
+  <section class="panel" id="panel-timeline">
+    <div class="section-title">
+      <div class="eyebrow">The Schedule</div>
+      <h1>Your Listing Timeline</h1>
+      <div class="sub" id="timelineSub">Anchored on Active Thursday: Thursday, May 14, 2026</div>
+    </div>
+    <div class="alert-box" style="margin-top:24px;margin-bottom:24px;padding:14px 18px;">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+      <div style="font-size:13px;"><strong>Compressed timeline:</strong> 7-day runway from walkthrough to Active. Standard is 14 days.</div>
+    </div>
+    <div class="cal-wrap" id="calWrap"></div>
+    <div class="timeline-list" id="timelineList"></div>
+  </section>
+
+  <section class="panel" id="panel-walkthrough">
+    <div class="section-title">
+      <div class="eyebrow">Capture</div>
+      <h1>Walkthrough Notes</h1>
+      <div class="sub">Home features sheet — tap to select features, type extra notes where needed.</div>
+    </div>
+    <div class="wt-intro-note">
+      <strong>How to use:</strong> Tap any feature chip to highlight it (tap again to deselect). Add brand names, free-text notes, or anything custom in the "Other notes" field of each section. When you're done with the walkthrough, hit <em>Email Notes to Team</em> at the bottom to send everything to Ann, Yam, and yourself.
+    </div>
+
+    <!-- Main feature areas (Kitchen, Master Bedroom, Master Bath, etc.) -->
+    <div class="wt-area-grid" id="roomGrid"></div>
+
+    <!-- Additional bedrooms comparison grid -->
+    <div class="wt-bedroom-section" id="wt-bedrooms"></div>
+
+    <!-- Property systems (Water, Air, Heat) + HOA + Garage -->
+    <div class="wt-systems-section" id="wt-systems"></div>
+
+    <!-- AGENT FOCUS AREAS — captured here on Walkthrough, auto-syncs to Prep tab -->
+    <h2 class="wt-focus-header serif">Focus Areas for the Listing</h2>
+    <p class="wt-focus-sub">Specific prep recommendations for this home — these auto-populate on the seller-facing Prep tab. Type once, appears in both places.</p>
+    <div class="prep-notes-grid">
+      <div class="prep-notes-card">
+        <div class="prep-notes-title">Interior — Focus Items</div>
+        <textarea id="wt-interior" placeholder="Walls need touch-up paint in main hallway, dining chandelier should come down, master closet needs to be edited down..."></textarea>
+      </div>
+      <div class="prep-notes-card">
+        <div class="prep-notes-title">Exterior — Focus Items</div>
+        <textarea id="wt-exterior" placeholder="Mulch refresh in front beds, pressure-wash front walkway, trim shrubs framing the porch..."></textarea>
+      </div>
+    </div>
+
+    <div class="neighborhood">
+      <div class="lbl-section">Neighborhood Snapshot</div>
+      <p><strong>Chesterfield Landing</strong> is a Stanley Martin community in Crozet built primarily 2015-2020. Walkable to Downtown Crozet (Crozet Library, Mudhouse Coffee, Crozet Pizza, Pro Re Nata Brewery), close to Claudius Crozet Park, and minutes to Old Trail Village amenities. Recent comparable sales on Watervale Drive: 5510 ($685K, 4BR/3.5BA, 3,292sqft, 2022), 5534 ($839K, 5BR/4.5BA, 3,292sqft, 2023), 5552 ($940K, 4BR/2.5BA, 3,112sqft, 2024). The street currently shows strong appreciation. School zone: Crozet Elementary, Henley Middle, Western Albemarle High — consistently top-rated in Albemarle County.</p>
+    </div>
+
+    <div class="send-team-block">
+      <div class="send-team-copy">
+        <div class="lbl-section">Send to Listing Team</div>
+        <p>Bundles every selected feature + all your notes into a single email to Ann, Yam, and you. Opens in your mail app so you can review before sending.</p>
+      </div>
+      <button class="send-team-btn" onclick="sendNotesToTeam()" aria-label="Email walkthrough notes to listing team">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        Email Notes to Team
+      </button>
+    </div>
+  </section>
+
+  <section class="panel" id="panel-prep">
+    <div class="section-title">
+      <div class="eyebrow">Get Ready</div>
+      <h1>Pre-Listing Checklist</h1>
+      <div class="sub">Notes from today's walkthrough + the full Story House staging guide.</div>
+    </div>
+
+    <!-- AGENT NOTES — mirrored from Walkthrough tab (single source of truth there) -->
+    <h2 class="prep-section-header serif">Focus Areas for 5505 Watervale</h2>
+    <p class="prep-section-sub">Sasha's specific recommendations for this home — the priority items that came up during the walkthrough.</p>
+    <div class="prep-notes-grid">
+      <div class="prep-notes-card mirror">
+        <div class="prep-notes-title">Interior — Focus Items</div>
+        <div id="prep-interior-mirror" class="prep-notes-mirror">Captured on the Walkthrough tab.</div>
+      </div>
+      <div class="prep-notes-card mirror">
+        <div class="prep-notes-title">Exterior — Focus Items</div>
+        <div id="prep-exterior-mirror" class="prep-notes-mirror">Captured on the Walkthrough tab.</div>
+      </div>
+    </div>
+
+    <!-- STANDARD CHECKLIST — Story House Sell Your Home Faster tips -->
+    <h2 class="prep-section-header serif">The Story House Standard Checklist</h2>
+    <p class="prep-section-sub">Every Story House listing follows this comprehensive prep guide. Complete what applies, ignore what doesn't.</p>
+    <div class="checklist-grid" id="checklistGrid"></div>
+
+    <div class="vendors-block">
+      <h3 class="serif">Story House Preferred Vendors</h3>
+      <p class="prep-section-sub">Need help getting it all done? Call us — we'll connect you with the best people in town for the job.</p>
+      <div class="vendor-grid" id="vendorGrid"></div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="bottom">
+  <div class="inner">
+    <div>
+      <div class="tag">Designed, Not Default.</div>
+      <div style="margin-top:8px;">Story House <em class="script">Real Estate</em> · 2110 Ivy Road, Charlottesville, VA 22903</div>
+    </div>
+    <div class="opacity">The BestSeller Method™</div>
+  </div>
+</footer>
+
+<script>
+const state = {
+  listPrice: 900000,
+  activeDate: '2026-05-14',
+  controls: {
+    commissionPct: 3,
+    buyerBrokerPct: 3,
+    concessions: 0,
+    payoff: 700000,
+    warranty: 600,
+    wdi: 1000,
+    taxProration: 1200,
+    hoaSpecial: 0,
+  },
+};
+
+const NINE_STEPS = [
+  { n: 1, title: 'Initial Walkthrough', body: 'Staging advice, preliminary pricing, sample timeline, and seller homework forms.', icon: 'home' },
+  { n: 2, title: 'Post-Walkthrough Pricing', body: 'Updated comps, final list-price recommendation, and net sales sheet.', icon: 'trending' },
+  { n: 3, title: 'Listing Docs Signed & Vendors Set', body: 'Agreement executed. Photoshoot reserved. Vendors lined up.', icon: 'file' },
+  { n: 4, title: 'Photography & Marketing Assets', body: 'Professional photographer, drone, video, twilight. No smartphones, ever.', icon: 'camera' },
+  { n: 5, title: 'MLS Listing Approved', body: 'Sellers review the drafted listing for 100% accuracy before Coming Soon.', icon: 'check' },
+  { n: 6, title: 'Coming Soon Status', body: 'Internal MLS status. Marketing begins. Full buyer/agent awareness pre-Active.', icon: 'megaphone' },
+  { n: 7, title: 'Active Status', body: 'Showings begin. Traffic concentrated in first 72 hours.', icon: 'eye' },
+  { n: 8, title: 'Open House', body: 'Saturday and/or Sunday, hosted by a Story House buyer agent.', icon: 'door' },
+  { n: 9, title: 'Offers Reviewed', body: 'Set offer-review date, side-by-side comparison, Sasha negotiates.', icon: 'handshake' },
+];
+
+const ICONS = {
+  home:      '<path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>',
+  trending:  '<polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/>',
+  file:      '<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/>',
+  camera:    '<path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/>',
+  check:     '<path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/>',
+  megaphone: '<path d="m3 11 18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/>',
+  eye:       '<path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/>',
+  door:      '<path d="M13 4h3a2 2 0 0 1 2 2v14"/><path d="M2 20h3"/><path d="M13 20h9"/><path d="M10 12v.01"/><path d="M13 4.562v16.157a1 1 0 0 1-1.242.97L5 20V5.562a2 2 0 0 1 1.515-1.94l4-1A2 2 0 0 1 13 4.561Z"/>',
+  handshake: '<path d="m11 17 2 2a1 1 0 1 0 3-3"/><path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4"/><path d="m21 3 1 11h-2"/><path d="M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3"/><path d="M3 4h8"/>',
+  sparkles:  '<path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/>',
+  chevron:   '<polyline points="9 18 15 12 9 6"/>',
+};
+
+function svgIcon(key, size=22, stroke=1.8) {
+  return `<svg class="icon" xmlns="http://www.w3.org/2000/svg" width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="${stroke}" stroke-linecap="round" stroke-linejoin="round">${ICONS[key]}</svg>`;
+}
+
+const TIMELINE_DEFS = [
+  { phase: 'prep',   offset: -7,  milestone: 'Initial Walkthrough',           owner: 'Sasha',           icon: 'home',      desc: 'Staging advice, prelim pricing, sample timeline, seller homework.' },
+  { phase: 'prep',   offset: -7,  milestone: 'Interior Prep Zone Begins',     owner: 'Sellers',         icon: 'sparkles',  desc: 'Declutter, neutral paint touch-up, packing personal items, deep clean.' },
+  { phase: 'prep',   offset: -6,  milestone: 'Landscaping & Curb Appeal',     owner: 'Sellers',         icon: 'sparkles',  desc: 'Mulch refresh, lawn at peak, pressure wash, front door touch.' },
+  { phase: 'prep',   offset: -5,  milestone: 'Listing Documents Signed',      owner: 'Ann',             icon: 'file',      desc: 'Listing agreement executed, vendors fully scheduled.' },
+  { phase: 'launch', offset: -4,  milestone: 'Photos Taken',                  owner: 'Ann',             icon: 'camera',    desc: 'Professional photographer, drone, video, twilight if applicable.' },
+  { phase: 'launch', offset: -3,  milestone: 'Photos Received',               owner: 'Yam',             icon: 'camera',    desc: 'Photographer delivers. Listing draft finalized for review.' },
+  { phase: 'launch', offset: -2,  milestone: 'Coming Soon Status',            owner: 'Yam',             icon: 'megaphone', desc: 'MLS Coming Soon. Marketing push begins. Buyer/agent awareness pre-Active.' },
+  { phase: 'launch', offset: -1,  milestone: 'MLS Listing Approved',          owner: 'Sasha + Sellers', icon: 'check',     desc: 'Final draft confirmed by sellers. Lockboxes prepped.' },
+  { phase: 'live',   offset:  0,  milestone: 'ACTIVE — Showings Begin',       owner: 'Team',            icon: 'door',      desc: 'First showing day. Heaviest traffic in first 72 hours.', star: true },
+  { phase: 'live',   offset:  2,  milestone: 'Open House — Saturday',         owner: 'Buyer Agent',     icon: 'door',      desc: 'Public open house, 11a-1p. Hosted by a Story House buyer agent.' },
+  { phase: 'live',   offset:  3,  milestone: 'Open House — Sunday',           owner: 'Buyer Agent',     icon: 'door',      desc: 'Optional second day, 1p-3p.' },
+  { phase: 'live',   offset:  5,  milestone: 'Offers Reviewed',               owner: 'Sasha',           icon: 'handshake', desc: 'Offer review date. Side-by-side comparison. Sasha negotiates.' },
+];
+
+const ROOMS = ['Exterior & Curb Appeal', 'Foyer & Entry', 'Kitchen', 'Living / Family Room', 'Dining', 'Primary Suite', 'Additional Bedrooms', 'Bathrooms', 'Basement / Lower Level', 'Garage', 'Outdoor Spaces (Deck / Yard)', 'Recent Updates / Mechanicals'];
+
+// ============================================================
+// WALKTHROUGH AREAS — full Home Features Sheet structure.
+// Each area has labeled chip groups (multi-select), optional
+// short text inputs, and a free-text notes textarea.
+// id format: kebab-case; chip values stored space-separated.
+// ============================================================
+const WALKTHROUGH_AREAS = [
+  {
+    id: 'kitchen',
+    label: 'Kitchen',
+    chipGroups: [
+      { label: 'Layout',         chips: ['Island', 'Stove in island', 'Sink in island', 'Drawers below island'] },
+      { label: 'Oven',           chips: ['Single oven', 'Double oven', 'Built-in oven', 'Electric', 'Gas'] },
+      { label: 'Range / Cooktop',chips: ['Range', 'Cooktop', 'Built-in cooktop', 'Gas cooktop', 'Electric cooktop'] },
+      { label: 'Microwave',      chips: ['Built-in microwave', 'Microwave on counter'] },
+      { label: 'Refrigerator',   chips: ['Regular refrigerator', 'Side-by-side refrigerator'] },
+      { label: 'Countertops',    chips: ['Granite', 'Quartz', 'Marble', 'Butcher block'] },
+      { label: 'Flooring',       chips: ['Hardwood', 'Tile', 'Stone', 'Parquet', 'Carpet'] },
+      { label: 'Other features', chips: ['Backsplash', 'Stainless steel appliances'] },
+    ],
+    textInputs: [
+      { id: 'kitchen-other-counter', label: 'Other countertops', placeholder: 'e.g., soapstone' },
+      { id: 'kitchen-brand',         label: 'Appliance brand(s)', placeholder: 'e.g., GE Cafe, Wolf' },
+    ],
+  },
+  {
+    id: 'master-bedroom',
+    label: 'Master Bedroom',
+    chipGroups: [
+      { label: 'Floor',     chips: ['Upstairs', 'Downstairs'] },
+      { label: 'Closets',   chips: ['Walk-in closet', 'His & Hers closets'] },
+      { label: 'Features',  chips: ['Suite', 'Sitting area'] },
+      { label: 'Flooring',  chips: ['Carpet', 'Hardwood'] },
+    ],
+  },
+  {
+    id: 'master-bath',
+    label: 'Master Bath',
+    chipGroups: [
+      { label: 'Shower',   chips: ['Walk-in shower', 'Steam shower', 'Shower only', 'Separate tub/shower', 'Combo'] },
+      { label: 'Tub',      chips: ['Tile surround tub', 'Tub only', 'Whirlpool', 'Jacuzzi'] },
+      { label: 'Layout',   chips: ['Dressing room', 'Double vanities', 'Toilet in separate area'] },
+      { label: 'Flooring', chips: ['Stone', 'Tile', 'Vinyl', 'Marble'] },
+    ],
+  },
+  {
+    id: 'dining-room',
+    label: 'Dining Room',
+    chipGroups: [
+      { label: 'Style',    chips: ['Formal', 'Wainscoting', 'Chandelier'] },
+      { label: 'Flooring', chips: ['Hardwood', 'Carpet', 'Stone', 'Marble', 'Parquet'] },
+    ],
+  },
+  {
+    id: 'living-room',
+    label: 'Living Room',
+    chipGroups: [
+      { label: 'Style',    chips: ['Formal', 'Separate', 'Fireplace', 'Wainscoting', 'Wall of windows', 'Track lighting', 'Built-in bookcase'] },
+      { label: 'Flooring', chips: ['Carpet', 'Hardwood', 'Marble', 'Stone', 'Parquet'] },
+    ],
+  },
+  {
+    id: 'rec-room',
+    label: 'Rec Room',
+    chipGroups: [
+      { label: 'Location',   chips: ['Basement level', 'Over garage', 'Walk-out'] },
+      { label: 'Features',   chips: ['Fireplace', 'Wet bar', 'Recessed lighting', 'Bathroom', 'Unfinished'] },
+      { label: 'Flooring',   chips: ['Carpet', 'Hardwood'] },
+    ],
+    textInputs: [
+      { id: 'rec-other-floor', label: 'If on other floor', placeholder: 'e.g., 2nd level' },
+    ],
+  },
+  {
+    id: 'patio-deck',
+    label: 'Patio / Deck',
+    chipGroups: [
+      { label: 'Outdoor structures', chips: ['Covered deck', 'Covered porch', 'Covered patio', 'Patio', 'Deck', 'Screened patio', 'Screened deck', 'None'] },
+    ],
+  },
+  {
+    id: 'pool',
+    label: 'Pool',
+    chipGroups: [
+      { label: 'Type', chips: ['Above ground', 'In-ground', 'Indoor', 'None'] },
+    ],
+  },
+];
+
+// Property-wide systems — single-select where logical, multi-select where multiple apply
+const PROPERTY_SYSTEMS = [
+  { id: 'sys-water', label: 'Water',  chips: ['City', 'Well', 'Septic', 'Sewer'], multi: true },
+  { id: 'sys-air',   label: 'Air',    chips: ['Electric', 'Gas', 'Geothermal', 'Central', 'Attic fan', 'Dual'], multi: true },
+  { id: 'sys-heat',  label: 'Heat',   chips: ['Coal', 'Gas', 'Solar', 'Propane', 'Baseboard', 'Heat pump', 'Electric', 'Geothermal', 'Wood', 'Oil', 'Furnace', 'Central'], multi: true },
+];
+
+// Additional bedrooms — compact comparison grid
+const ADDITIONAL_BEDROOMS = [
+  { id: 'bd2', label: 'Bedroom #2' },
+  { id: 'bd3', label: 'Bedroom #3' },
+  { id: 'bd4', label: 'Bedroom #4' },
+  { id: 'bd5', label: 'Bedroom #5' },
+];
+const BEDROOM_ATTRS = ['Full Bath', 'Half Bath', 'Jack & Jill', 'Walk-in closet', 'Extra-large closet', 'Carpet', 'Hardwood'];
+const VENDORS = ['Painter', 'Landscaper', 'Cleaner', 'Handyman', 'Stager (if needed)', 'Pressure Washer'];
+const CHECKLIST_AREAS = [
+  {
+    area: 'Outdoors & Curb Appeal',
+    items: [
+      'Clean and revitalize front door (fresh paint if needed)',
+      'Clean up deck, patio, porch — power wash if needed',
+      'Remove all outdoor trash and clutter',
+      'Put away outdoor tools, toys, garden hoses, extension cords',
+      'Make gardens look maintained — weed beds, mulch around trees/shrubs',
+      'Get a fresh, large doormat',
+      'Replace outdoor lightbulbs if needed',
+      'Make garage look clean and large',
+      'Complete any lingering outdoor repairs',
+      'Spray off siding and clean if needed',
+      'Repair major or unsafe cracks in walkways and steps',
+      'Clean gutters',
+      'Mow lawn and keep it weed-free',
+      'Trim hedges and shrubs',
+      'Add colorful flowers in exterior focal areas',
+    ]
+  },
+  {
+    area: 'Showings — General',
+    items: [
+      'Vacuum and dust continually',
+      'Remove all dirt and grime',
+      'Tackle all odors and freshen with potpourri or fresh-baked cookies',
+      'Make any needed minor repairs around the home',
+      'Consider putting large or dated furniture in storage; declutter',
+      'Arrange rooms with a clear purpose, natural flow, maximize space',
+      'Fill nail holes or cracks',
+      'Touch up scratches on walls or do fresh coats of paint where needed',
+      'Replace all burnt-out lightbulbs',
+      'Make plans for you and pets to be out of the home for all showings',
+      'Maximize light through windows — blinds up',
+      'Clean windows and window treatments',
+      'Move furniture against a wall a minimum of six inches away',
+      'Place slip-proof mats under every loose rug',
+      'Park cars away from home and remove from garage on photo days',
+    ]
+  },
+  {
+    area: 'Living Areas',
+    items: [
+      'Pack away most personal photos',
+      'Remove knickknacks and keep decor neutral',
+      'Add fresh flowers to an area',
+      'Tidy up entertainment centers',
+      'Clean up magazines, newspapers, mail',
+      'Clean carpets and polish hard floors',
+      'Expose original hardwoods if covered',
+      'Find a place for all toys and kids items; limit these to playrooms',
+      'Ensure shelves and flat surfaces have no more than 2 items on them',
+      'Remove any item indicating political party or polarizing issue',
+    ]
+  },
+  {
+    area: 'Kitchen & Dining',
+    items: [
+      'Scrub all kitchen surfaces',
+      'Eliminate most countertop appliances',
+      'Clear fridge of magnets, pictures, papers',
+      'Install new kitchen hardware if very dated',
+      'Clean out pantry and cabinets',
+      'Keep refrigerator neat and odor-free',
+      'Tidy up drawers; use organizers if needed',
+      'Clean or repair damaged/stained grout/caulk',
+      'Dust top of refrigerator and ceiling fan blades',
+      'Keep only matching appliances on counters — no food except fresh fruit in a bowl',
+      'If kitchen faucet is dated, change it to a modern one',
+      'Remove all silk plants from above cabinetry',
+    ]
+  },
+  {
+    area: 'Bathrooms',
+    items: [
+      'Shine up bathrooms, remove stains, keep waste emptied',
+      'Consider replacing 1-2 fixtures in dated bathrooms (faucet, hardware)',
+      'De-clutter toiletries, add plush towels, new shower curtain',
+      'Fix leaky faucets; consider new shower head if needed',
+      'Limit items in shower/tub; organize necessities in a small bin',
+      'Clean medicine cabinet; keep prescriptions out of sight',
+      'Remove all cleaning devices including plungers',
+      'Clean grimy shower or water-stained shower doors (vinegar + dish soap)',
+    ]
+  },
+  {
+    area: 'Bedrooms',
+    items: [
+      'Keep beds made; use fresh matching linens',
+      'Cut down on bedside clutter',
+      'Find a safe place for jewelry and valuables',
+      'Make sure dirty clothing is not visible',
+      'Clean out closets, organizing all items',
+      'Put off-season clothing in storage',
+      'Tidy shoes and accessories; eliminate some, use proper storage',
+      'Eliminate random items from clothing closets that don\u2019t belong',
+      'Use attractive organizing systems in closets where applicable',
+      'Kids\u2019 rooms should look like kids\u2019 rooms — just keep them tidy',
+      'Store any extra televisions (in kitchens or bedrooms) if possible',
+    ]
+  },
+  {
+    area: 'Office',
+    items: [
+      'Tidy office desks; corral cords, store seldom-used components',
+      'Tidy CDs, software, books; put some in storage if possible',
+      'File all papers; keep sensitive documents (especially REAL ESTATE docs) safely hidden',
+      'Make sure office doesn\u2019t look like a junk room — add seating if needed',
+    ]
+  },
+  {
+    area: 'Laundry & Basement',
+    items: [
+      'Tidy up laundry area; keep free of dirty or drying laundry',
+      'Resolve any wet basement issues (windows, yard drainage)',
+      'If unresolved, call an expert to address it',
+      'Maximize light in basement — light paint, uncovered windows, extra fixtures',
+      'Paint basement floor if it helps the space look cleaner and brighter',
+    ]
+  },
+  {
+    area: 'Photo Day Specifics',
+    items: [
+      'Make sure every light bulb works — consistent bulb types',
+      'Consider higher wattage bulbs to brighten rooms',
+      'Remove all items from refrigerator exterior',
+      'Remove all toiletries from bathroom counters',
+      'Remove all personal cards and notes',
+      'Park all cars away from home and remove from garage',
+      'Hide pet items, food bowls, litter boxes',
+      'Ensure shelves and flat surfaces have no more than 2 items',
+      'Test that doors open easily and locks don\u2019t stick',
+      'Keep an extra key in your car (Buyer\u2019s agents sometimes lock themselves out)',
+    ]
+  },
+  {
+    area: 'Pets & Odors',
+    items: [
+      'Remove all pet smells',
+      'Remove as many indicators of your pets as possible',
+      'Use potpourri or fresh-baked cookies to freshen before showings',
+      'Make plans for pets to be out of the home for all showings',
+    ]
+  },
+];
+
+function fmtMoney(n) { return n.toLocaleString('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }); }
+
+function calcNet(salePrice) {
+  const c = state.controls;
+  const listingCommission = salePrice * (c.commissionPct / 100);
+  const buyerBrokerComp = salePrice * (c.buyerBrokerPct / 100);
+  const sellerConcessions = c.concessions;
+  const grantorTax = salePrice / 1000;          // VA: $1 per $1,000
+  const deedPrep = 400;                          // estimate
+  const settlementCap = 350;                     // per contract Para 9b
+  const wdiInspection = c.wdi;
+  const homeWarranty = c.warranty;
+  const taxProration = c.taxProration;
+  const hoaSpecial = c.hoaSpecial;
+  const mortgagePayoff = c.payoff;
+  const otherConcessions = 0;
+
+  const grossProceeds = salePrice;
+  const totalBrokerage = listingCommission + buyerBrokerComp;
+  const subtotalAfterBrokerage = grossProceeds - totalBrokerage - sellerConcessions;
+  const standardClosingCosts = deedPrep + grantorTax + settlementCap + wdiInspection + homeWarranty + otherConcessions;
+  const prorations = taxProration; // negative for seller (owes buyer for unused days)
+  const sellerSpecific = mortgagePayoff + hoaSpecial;
+
+  const netToSeller = subtotalAfterBrokerage - standardClosingCosts - prorations - sellerSpecific;
+
+  return {
+    salePrice, listingCommission, buyerBrokerComp, sellerConcessions,
+    subtotalAfterBrokerage,
+    deedPrep, grantorTax, settlementCap, wdiInspection, homeWarranty, otherConcessions,
+    standardClosingCosts,
+    taxProration, prorations,
+    mortgagePayoff, hoaSpecial, sellerSpecific,
+    netToSeller,
+  };
+}
+
+function buildTimeline(activeDateStr) {
+  const X = new Date(activeDateStr + 'T12:00:00');
+  return TIMELINE_DEFS.map(d => {
+    const dt = new Date(X);
+    dt.setDate(dt.getDate() + d.offset);
+    return { ...d, date: dt.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' }) };
+  });
+}
+
+function fmtLong(dateStr) {
+  return new Date(dateStr + 'T12:00:00').toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' });
+}
+
+function ymd(d) {
+  return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+}
+
+function renderNine() {
+  document.getElementById('nineGrid').innerHTML = NINE_STEPS.map(s => `
+    <div class="nine-card">
+      <div class="card-head">
+        <div class="num-badge">${s.n}</div>
+        ${svgIcon(s.icon, 18, 1.5)}
+        <h3 class="serif">${s.title}</h3>
+      </div>
+      <p>${s.body}</p>
+    </div>
+  `).join('');
+}
+
+function renderNetSheet() {
+  const lp = state.listPrice;
+  const c = state.controls;
+  const scenarios = [
+    { label: 'Conservative', sub: '−$25K from list', price: lp - 25000, idx: 0, highlight: false },
+    { label: 'Strategic',    sub: 'Target',         price: lp,         idx: 1, highlight: true  },
+    { label: 'Stretch',       sub: '+$25K above list', price: lp + 25000, idx: 2, highlight: false },
+  ];
+  const nets = scenarios.map(sc => ({ ...sc, n: calcNet(sc.price) }));
+
+  // Helpers to render rows
+  const colClass = (i) => `value col-${i}`;
+  const moneyCells = (key, opts = {}) => nets.map((s, i) => {
+    const v = s.n[key];
+    const isMinus = opts.minus;
+    const display = isMinus ? `(${fmtMoney(v)})` : fmtMoney(v);
+    return `<td class="${colClass(i)}${isMinus ? ' minus' : ''}">${display}</td>`;
+  }).join('');
+
+  const specialCells = nets.map((s, i) =>
+    `<td class="${colClass(i)} minus">${s.n.hoaSpecial > 0 ? '(' + fmtMoney(s.n.hoaSpecial) + ')' : '—'}</td>`
+  ).join('');
+
+  const fillableCells = (text) => nets.map((s, i) =>
+    `<td class="${colClass(i)} fillable">${text}</td>`
+  ).join('');
+
+  // Build table HTML
+  const tableHtml = `
+    <table class="net-table">
+      <colgroup>
+        <col class="label-col" />
+        <col class="scenario-col" />
+        <col class="scenario-col" />
+        <col class="scenario-col" />
+      </colgroup>
+      <thead>
+        <tr>
+          <th></th>
+          ${nets.map(s => `
+            <th${s.highlight ? ' class="highlight"' : ''}>
+              <div class="col-label">${s.label}</div>
+              <div class="col-price">${fmtMoney(s.n.salePrice)}</div>
+            </th>
+          `).join('')}
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr class="section-row"><td class="section-label" colspan="4">1 · Sale Proceeds</td></tr>
+        <tr>
+          <td class="row-label">Less: Seller-Paid Closing Costs<span class="ns-note">Buyer concessions</span></td>
+          ${moneyCells('sellerConcessions', { minus: true })}
+        </tr>
+        <tr>
+          <td class="row-label">Less: Listing Brokerage Commission<span class="ns-note">${c.commissionPct}% of sale price</span></td>
+          ${moneyCells('listingCommission', { minus: true })}
+        </tr>
+        <tr>
+          <td class="row-label">Less: Buyer Broker Compensation<span class="ns-note">Typically 1–3%, negotiated at time of offer. Estimated ${c.buyerBrokerPct}%.</span></td>
+          ${moneyCells('buyerBrokerComp', { minus: true })}
+        </tr>
+        <tr class="subtotal">
+          <td class="row-label">Subtotal: Net Sales Proceeds Before Other Costs</td>
+          ${moneyCells('subtotalAfterBrokerage')}
+        </tr>
+
+        <tr class="section-row"><td class="section-label" colspan="4">2 · Standard Seller Closing Costs</td></tr>
+        <tr>
+          <td class="row-label">Deed Preparation<span class="ns-note">Estimate ~ $400</span></td>
+          ${moneyCells('deedPrep', { minus: true })}
+        </tr>
+        <tr>
+          <td class="row-label">Virginia Grantor's Tax<span class="ns-note">$1.00 per $1,000 of sale price</span></td>
+          ${moneyCells('grantorTax', { minus: true })}
+        </tr>
+        <tr>
+          <td class="row-label">Settlement Services Cap<span class="ns-note">Per contract Para. 9(b)</span></td>
+          ${moneyCells('settlementCap', { minus: true })}
+        </tr>
+        <tr>
+          <td class="row-label">Wood Destroying Insect Inspection<span class="ns-note">Max cap per contract</span></td>
+          ${moneyCells('wdiInspection', { minus: true })}
+        </tr>
+        <tr>
+          <td class="row-label">Home Warranty (1-yr, incl. HVAC)<span class="ns-note">Estimate</span></td>
+          ${moneyCells('homeWarranty', { minus: true })}
+        </tr>
+
+        <tr class="section-row"><td class="section-label" colspan="4">3 · Pro-Rations</td></tr>
+        <tr>
+          <td class="row-label">Pro-rated Property Taxes<span class="ns-note">Depends on closing date</span></td>
+          ${moneyCells('taxProration', { minus: true })}
+        </tr>
+        <tr>
+          <td class="row-label">Pro-rated HOA Dues<span class="ns-note">Adjust if applicable</span></td>
+          ${fillableCells('N/A')}
+        </tr>
+        <tr>
+          <td class="row-label">Oil / Propane / Fuel Reimbursement<span class="ns-note">If applicable</span></td>
+          ${fillableCells('Agent to fill')}
+        </tr>
+
+        <tr class="section-row"><td class="section-label" colspan="4">4 · Seller-Specific Payoffs</td></tr>
+        <tr>
+          <td class="row-label">Mortgage Payoff (1st)<span class="ns-note">Verify exact with lender</span></td>
+          ${moneyCells('mortgagePayoff', { minus: true })}
+        </tr>
+        <tr>
+          <td class="row-label">Mortgage Payoff (2nd / HELOC)<span class="ns-note">If applicable</span></td>
+          ${fillableCells('Agent to fill')}
+        </tr>
+        <tr>
+          <td class="row-label">Outstanding Special Assessments / Liens</td>
+          ${specialCells}
+        </tr>
+      </tbody>
+
+      <tfoot>
+        <tr>
+          <td class="row-label">Estimated Net to Seller</td>
+          ${nets.map((s, i) => `<td class="${colClass(i)}">${fmtMoney(s.n.netToSeller)}</td>`).join('')}
+        </tr>
+      </tfoot>
+    </table>
+  `;
+
+  document.getElementById('netTableWrap').innerHTML = tableHtml;
+}
+
+function renderTimeline() {
+  const tl = buildTimeline(state.activeDate);
+  document.getElementById('timelineSub').textContent = `Anchored on Active Thursday: ${fmtLong(state.activeDate)}`;
+  renderCalendar(tl);
+  document.getElementById('timelineList').innerHTML = tl.map((item, idx) => {
+    const iconClass = item.star ? 'star' : item.phase;
+    return `
+      <div class="tl-row">
+        <div class="tl-date"><div class="d">${item.date}</div></div>
+        <div class="tl-icon-col">
+          <div class="tl-icon ${iconClass}">${svgIcon(item.icon, 16, 2)}</div>
+          ${idx < tl.length - 1 ? '<div class="tl-line"></div>' : ''}
+        </div>
+        <div class="tl-content">
+          <div class="ms"><span class="ms-name">${item.milestone}</span>${item.star ? '<span class="ms-tag">GO LIVE</span>' : ''}</div>
+          <div class="desc">${item.desc}</div>
+          <div class="own"><strong>Owner:</strong> ${item.owner}</div>
+        </div>
+      </div>
+    `;
+  }).join('');
+}
+
+function renderCalendar(tl) {
+  const X = new Date(state.activeDate + 'T12:00:00');
+  const today = new Date('2026-05-06T12:00:00');
+  const todayKey = ymd(today), xKey = ymd(X);
+
+  const eventsByDay = {};
+  tl.forEach(item => {
+    const dt = new Date(X); dt.setDate(dt.getDate() + item.offset);
+    const key = ymd(dt);
+    if (!eventsByDay[key]) eventsByDay[key] = [];
+    eventsByDay[key].push(item);
+  });
+
+  const focalMonth = X.getMonth(), focalYear = X.getFullYear();
+  const monthName = X.toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
+  const firstOfMonth = new Date(focalYear, focalMonth, 1);
+  const startWeekday = firstOfMonth.getDay();
+  const daysInMonth = new Date(focalYear, focalMonth + 1, 0).getDate();
+
+  const cells = [];
+  const prevMonthLast = new Date(focalYear, focalMonth, 0).getDate();
+  for (let i = startWeekday - 1; i >= 0; i--) cells.push({ date: new Date(focalYear, focalMonth - 1, prevMonthLast - i), dim: true });
+  for (let d = 1; d <= daysInMonth; d++) cells.push({ date: new Date(focalYear, focalMonth, d), dim: false });
+  while (cells.length % 7 !== 0) {
+    const last = cells[cells.length - 1].date;
+    const next = new Date(last); next.setDate(last.getDate() + 1);
+    cells.push({ date: next, dim: true });
+  }
+
+  const cellHtml = cells.map(cell => {
+    const key = ymd(cell.date);
+    const dayNum = cell.date.getDate();
+    const events = eventsByDay[key] || [];
+    const isToday = key === todayKey, isX = key === xKey;
+    const classes = ['cal-cell'];
+    if (cell.dim) classes.push('dim');
+    if (isToday && !cell.dim) classes.push('today');
+    if (isX) classes.push('active-x');
+
+    const eventHtml = events.map(ev => {
+      const cls = ev.star ? 'star' : ev.phase;
+      const label = ev.star ? 'ACTIVE — Live!' : ev.milestone;
+      return `<div class="cal-event ${cls}" title="${ev.milestone} — ${ev.desc}">${svgIcon(ev.icon, 10, 2)}<span>${label}</span></div>`;
+    }).join('');
+
+    const todayMarker = isToday && !cell.dim ? '<div class="cal-today-marker">Today</div>' : '';
+    return `<div class="${classes.join(' ')}">${todayMarker}<div class="cal-daynum">${dayNum}</div>${eventHtml}</div>`;
+  }).join('');
+
+  document.getElementById('calWrap').innerHTML = `
+    <div class="cal-head">
+      <div class="month-title">${monthName}</div>
+      <div class="cal-legend">
+        <div class="item"><span class="dot prep"></span>Prep</div>
+        <div class="item"><span class="dot launch"></span>Launch</div>
+        <div class="item"><span class="dot live"></span>Live / Active</div>
+      </div>
+    </div>
+    <div class="cal-grid">
+      <div class="cal-dow">Sun</div><div class="cal-dow">Mon</div><div class="cal-dow">Tue</div><div class="cal-dow">Wed</div><div class="cal-dow">Thu</div><div class="cal-dow">Fri</div><div class="cal-dow">Sat</div>
+      ${cellHtml}
+    </div>
+  `;
+}
+
+function roomKey(name) {
+  return name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+}
+
+function chipId(areaId, chipText) {
+  return `chip-${areaId}-${roomKey(chipText)}`;
+}
+
+function renderWalkthrough() {
+  const cards = WALKTHROUGH_AREAS.map(area => {
+    const chipGroups = area.chipGroups.map(g => `
+      <div class="wt-chip-group">
+        <div class="chip-label">${g.label}</div>
+        <div class="wt-chip-row">
+          ${g.chips.map(c => `<span class="wt-chip" id="${chipId(area.id, c)}" data-area="${area.id}" data-chip="${c}" onclick="toggleChip(this)">${c}</span>`).join('')}
+        </div>
+      </div>
+    `).join('');
+
+    const textInputs = (area.textInputs || []).map(t => `
+      <div class="wt-text-input">
+        <label for="${t.id}">${t.label}</label>
+        <input type="text" id="${t.id}" placeholder="${t.placeholder || ''}" />
+      </div>
+    `).join('');
+
+    return `
+      <div class="wt-area-card">
+        <h3>${area.label}</h3>
+        ${chipGroups}
+        ${textInputs}
+        <div class="wt-notes">
+          <div class="wt-notes-label">Other notes</div>
+          <textarea id="wt-notes-${area.id}" placeholder="Anything specific to mention..."></textarea>
+        </div>
+      </div>
+    `;
+  }).join('');
+
+  document.getElementById('roomGrid').innerHTML = cards;
+}
+
+function toggleChip(el) {
+  el.classList.toggle('selected');
+}
+
+function toggleBdCheckbox(el) {
+  el.classList.toggle('checked');
+}
+
+function renderBedrooms() {
+  const wrap = document.getElementById('wt-bedrooms');
+  if (!wrap) return;
+
+  const headerRow = `
+    <tr>
+      <th></th>
+      ${ADDITIONAL_BEDROOMS.map(b => `<th class="bd-col">${b.label}</th>`).join('')}
+    </tr>
+  `;
+
+  const attrRows = BEDROOM_ATTRS.map(attr => {
+    const cells = ADDITIONAL_BEDROOMS.map(b => `
+      <td class="bd-cell">
+        <span class="wt-bd-checkbox" id="bd-${b.id}-${roomKey(attr)}" onclick="toggleBdCheckbox(this)"></span>
+      </td>
+    `).join('');
+    return `<tr><td class="attr-name">${attr}</td>${cells}</tr>`;
+  }).join('');
+
+  const extraRows = [
+    { id: 'color',  label: 'Color' },
+    { id: 'floor',  label: 'Floor (1st / 2nd / 3rd)' },
+    { id: 'lights', label: 'Overhead fan/lights' },
+    { id: 'shared', label: 'Bath shared with' },
+    { id: 'notes',  label: 'Notes' },
+  ].map(row => {
+    const cells = ADDITIONAL_BEDROOMS.map(b => `
+      <td class="bd-text"><input type="text" id="bd-${b.id}-${row.id}" /></td>
+    `).join('');
+    return `<tr><td class="attr-name">${row.label}</td>${cells}</tr>`;
+  }).join('');
+
+  wrap.innerHTML = `
+    <h3>Additional Bedrooms</h3>
+    <table class="wt-bedroom-table">
+      <thead>${headerRow}</thead>
+      <tbody>${attrRows}${extraRows}</tbody>
+    </table>
+  `;
+}
+
+function renderSystems() {
+  const wrap = document.getElementById('wt-systems');
+  if (!wrap) return;
+
+  const rows = PROPERTY_SYSTEMS.map(s => `
+    <div class="wt-system-row">
+      <div class="sys-label">${s.label}</div>
+      <div class="wt-chip-row">
+        ${s.chips.map(c => `<span class="wt-chip" id="${chipId(s.id, c)}" data-area="${s.id}" data-chip="${c}" onclick="toggleChip(this)">${c}</span>`).join('')}
+      </div>
+    </div>
+  `).join('');
+
+  wrap.innerHTML = `
+    <h3>Property Systems</h3>
+    ${rows}
+    <div class="wt-hoa-garage">
+      <div class="wt-mini-card">
+        <div class="mini-label">HOA Fees</div>
+        <div class="mini-row">
+          <span class="wt-chip" id="hoa-yes" data-area="hoa" data-chip="Yes" onclick="toggleChip(this)">Yes</span>
+          <span class="wt-chip" id="hoa-no" data-area="hoa" data-chip="No" onclick="toggleChip(this)">No</span>
+          <input type="number" id="hoa-amount" placeholder="$ per month" />
+        </div>
+      </div>
+      <div class="wt-mini-card">
+        <div class="mini-label">Garage</div>
+        <div class="mini-row">
+          <span class="wt-chip" id="garage-yes" data-area="garage" data-chip="Yes" onclick="toggleChip(this)">Yes</span>
+          <span class="wt-chip" id="garage-no" data-area="garage" data-chip="No" onclick="toggleChip(this)">No</span>
+          <input type="number" id="garage-cars" placeholder="# of cars" />
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+function renderPrep() {
+  document.getElementById('checklistGrid').innerHTML = CHECKLIST_AREAS.map(a => `
+    <div class="checklist-area">
+      <h3>${a.area}</h3>
+      <ul>${a.items.map(item => `<li><span>${item}</span></li>`).join('')}</ul>
+    </div>
+  `).join('');
+  document.getElementById('vendorGrid').innerHTML = VENDORS.map(v => `<div class="vendor-slot"><div class="cat">${v}</div><div class="v">To be assigned</div></div>`).join('');
+}
+
+function renderAll() {
+  // Refresh ALL state-dependent UI on every input change.
+  // This guarantees that net sheet, timeline, calendar, and hero price stay in sync
+  // regardless of which tab is currently visible.
+  document.getElementById('listPriceDisplay').textContent = fmtMoney(state.listPrice);
+  renderNetSheet();
+  renderTimeline();
+}
+
+document.querySelectorAll('.tab-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('panel-' + btn.dataset.tab).classList.add('active');
+  });
+});
+
+// Wire inputs to fire on BOTH 'input' (live keystroke) AND 'change' (commit on blur).
+// This catches edge cases on iPad/iOS where 'input' alone doesn't fire reliably.
+// ============================================================
+// EMAIL NOTES TO TEAM
+// Bundles every walkthrough room textarea + prep notes into a
+// single pre-filled email opened in the agent's mail app.
+// ============================================================
+const TEAM_EMAILS = {
+  // Always cc'd on every walkthrough notes email
+  always: ['ann@storyhousere.com', 'yam@storyhousere.com'],
+  // Listing agent for this dashboard — gets cc'd so they have a copy of what was sent
+  agent: 'sasha@storyhousere.com',
+};
+
+function sendNotesToTeam() {
+  const propertyAddress = '5505 Watervale Drive, Crozet, VA 22932';
+  const clientName = 'The Smiths';
+  const agentName = 'Sasha Tripp';
+
+  const lines = [];
+  lines.push(`Walkthrough notes from today's appointment at ${propertyAddress}.`);
+  lines.push(`Sellers: ${clientName}`);
+  lines.push(`Agent: ${agentName}`);
+  lines.push('');
+
+  // ===== Feature areas (Kitchen, Master Bedroom, Master Bath, etc.) =====
+  WALKTHROUGH_AREAS.forEach(area => {
+    const selectedChips = [];
+    area.chipGroups.forEach(g => {
+      g.chips.forEach(c => {
+        const el = document.getElementById(chipId(area.id, c));
+        if (el && el.classList.contains('selected')) {
+          selectedChips.push(c);
+        }
+      });
+    });
+    const textVals = (area.textInputs || []).map(t => {
+      const el = document.getElementById(t.id);
+      return { label: t.label, val: el && el.value ? el.value.trim() : '' };
+    }).filter(t => t.val.length > 0);
+    const notesEl = document.getElementById(`wt-notes-${area.id}`);
+    const notes = notesEl && notesEl.value ? notesEl.value.trim() : '';
+
+    if (selectedChips.length === 0 && textVals.length === 0 && notes.length === 0) return;
+
+    lines.push('─────────────────────────────────────');
+    lines.push(area.label.toUpperCase());
+    lines.push('─────────────────────────────────────');
+    if (selectedChips.length > 0) lines.push('Features: ' + selectedChips.join(', '));
+    textVals.forEach(t => lines.push(`${t.label}: ${t.val}`));
+    if (notes) lines.push('Notes: ' + notes);
+    lines.push('');
+  });
+
+  // ===== Additional bedrooms =====
+  const bedroomLines = [];
+  ADDITIONAL_BEDROOMS.forEach(b => {
+    const parts = [];
+    BEDROOM_ATTRS.forEach(attr => {
+      const el = document.getElementById(`bd-${b.id}-${roomKey(attr)}`);
+      if (el && el.classList.contains('checked')) parts.push(attr);
+    });
+    const color  = document.getElementById(`bd-${b.id}-color`);
+    const floor  = document.getElementById(`bd-${b.id}-floor`);
+    const lights = document.getElementById(`bd-${b.id}-lights`);
+    const shared = document.getElementById(`bd-${b.id}-shared`);
+    const notes  = document.getElementById(`bd-${b.id}-notes`);
+    const extras = [];
+    if (color  && color.value)  extras.push(`Color: ${color.value.trim()}`);
+    if (floor  && floor.value)  extras.push(`Floor: ${floor.value.trim()}`);
+    if (lights && lights.value) extras.push(`Lights: ${lights.value.trim()}`);
+    if (shared && shared.value) extras.push(`Shares bath with: ${shared.value.trim()}`);
+    if (notes  && notes.value)  extras.push(`Notes: ${notes.value.trim()}`);
+
+    if (parts.length === 0 && extras.length === 0) return;
+    bedroomLines.push(`▸ ${b.label}`);
+    if (parts.length > 0) bedroomLines.push('  Features: ' + parts.join(', '));
+    extras.forEach(e => bedroomLines.push('  ' + e));
+    bedroomLines.push('');
+  });
+  if (bedroomLines.length > 0) {
+    lines.push('─────────────────────────────────────');
+    lines.push('ADDITIONAL BEDROOMS');
+    lines.push('─────────────────────────────────────');
+    bedroomLines.forEach(l => lines.push(l));
+  }
+
+  // ===== Property systems =====
+  const systemLines = [];
+  PROPERTY_SYSTEMS.forEach(s => {
+    const selected = s.chips.filter(c => {
+      const el = document.getElementById(chipId(s.id, c));
+      return el && el.classList.contains('selected');
+    });
+    if (selected.length > 0) {
+      systemLines.push(`${s.label}: ${selected.join(', ')}`);
+    }
+  });
+  // HOA
+  const hoaYes = document.getElementById('hoa-yes');
+  const hoaNo  = document.getElementById('hoa-no');
+  const hoaAmt = document.getElementById('hoa-amount');
+  if (hoaYes && hoaYes.classList.contains('selected')) {
+    systemLines.push(`HOA: Yes${hoaAmt && hoaAmt.value ? ` ($${hoaAmt.value}/mo)` : ''}`);
+  } else if (hoaNo && hoaNo.classList.contains('selected')) {
+    systemLines.push('HOA: No');
+  }
+  // Garage
+  const gYes  = document.getElementById('garage-yes');
+  const gNo   = document.getElementById('garage-no');
+  const gCars = document.getElementById('garage-cars');
+  if (gYes && gYes.classList.contains('selected')) {
+    systemLines.push(`Garage: Yes${gCars && gCars.value ? ` (${gCars.value} car)` : ''}`);
+  } else if (gNo && gNo.classList.contains('selected')) {
+    systemLines.push('Garage: No');
+  }
+  if (systemLines.length > 0) {
+    lines.push('─────────────────────────────────────');
+    lines.push('PROPERTY SYSTEMS');
+    lines.push('─────────────────────────────────────');
+    systemLines.forEach(l => lines.push(l));
+    lines.push('');
+  }
+
+  // ===== Focus areas (Interior / Exterior) =====
+  const interiorEl = document.getElementById('wt-interior');
+  const exteriorEl = document.getElementById('wt-exterior');
+  const interiorNotes = interiorEl && interiorEl.value ? interiorEl.value.trim() : '';
+  const exteriorNotes = exteriorEl && exteriorEl.value ? exteriorEl.value.trim() : '';
+  if (interiorNotes || exteriorNotes) {
+    lines.push('─────────────────────────────────────');
+    lines.push('FOCUS AREAS FOR PREP');
+    lines.push('─────────────────────────────────────');
+    if (interiorNotes) { lines.push('Interior:'); lines.push(interiorNotes); lines.push(''); }
+    if (exteriorNotes) { lines.push('Exterior:'); lines.push(exteriorNotes); lines.push(''); }
+  }
+
+  lines.push('─────────────────────────────────────');
+  lines.push('Sent from the BestSeller Method™ dashboard.');
+
+  const body = lines.join('\n');
+  const subject = `Walkthrough Notes — ${propertyAddress} (${clientName})`;
+
+  const to = TEAM_EMAILS.always.join(',');
+  const cc = TEAM_EMAILS.agent;
+  const mailto = `mailto:${to}?cc=${cc}&subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  window.location.href = mailto;
+}
+
+function wireNumericInput(id, key, target) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  const handler = (e) => {
+    const v = Number(e.target.value);
+    const safe = isNaN(v) ? 0 : v;
+    if (target === 'controls') state.controls[key] = safe;
+    else state[key] = safe;
+    renderAll();
+  };
+  el.addEventListener('input', handler);
+  el.addEventListener('change', handler);
+  el.addEventListener('blur', handler);
+}
+
+// Property tab
+wireNumericInput('inListPrice', 'listPrice');
+
+// Net sheet controls (live-editable during seller conversation)
+wireNumericInput('inCommissionPct',  'commissionPct',  'controls');
+wireNumericInput('inBuyerBrokerPct', 'buyerBrokerPct', 'controls');
+wireNumericInput('inConcessions',    'concessions',    'controls');
+wireNumericInput('inPayoff',         'payoff',         'controls');
+wireNumericInput('inWarranty',       'warranty',       'controls');
+wireNumericInput('inWDI',            'wdi',            'controls');
+wireNumericInput('inTaxProration',   'taxProration',   'controls');
+wireNumericInput('inHOASpecial',     'hoaSpecial',     'controls');
+
+const activeInput = document.getElementById('inActive');
+const activeHandler = (e) => {
+  if (e.target.value) state.activeDate = e.target.value;
+  renderAll();
+};
+activeInput.addEventListener('input', activeHandler);
+activeInput.addEventListener('change', activeHandler);
+
+// ============================================================
+// FOCUS AREAS — bidirectional mirror from Walkthrough → Prep
+// Walkthrough tab is the single source of truth.
+// ============================================================
+function syncFocusMirror(srcId, mirrorId) {
+  const src = document.getElementById(srcId);
+  const mirror = document.getElementById(mirrorId);
+  if (!src || !mirror) return;
+  const update = () => {
+    const val = src.value.trim();
+    if (val) {
+      mirror.textContent = val;
+      mirror.classList.remove('empty');
+    } else {
+      mirror.textContent = 'Captured on the Walkthrough tab.';
+      mirror.classList.add('empty');
+    }
+  };
+  src.addEventListener('input', update);
+  src.addEventListener('change', update);
+  src.addEventListener('blur', update);
+  update();  // initial sync
+}
+syncFocusMirror('wt-interior', 'prep-interior-mirror');
+syncFocusMirror('wt-exterior', 'prep-exterior-mirror');
+
+// ============================================================
+// CLIENT MODE — ?mode=client strips agent-only UI from the dashboard
+// Use this URL for the seller take-home version after the appointment.
+// ============================================================
+(function applyClientMode() {
+  const params = new URLSearchParams(window.location.search);
+  if (params.get('mode') !== 'client') return;
+
+  document.body.classList.add('client-mode');
+
+  // Hide the Walkthrough tab button entirely
+  document.querySelectorAll('nav.tabs button[data-tab="walkthrough"]').forEach(b => b.style.display = 'none');
+  // Hide the Walkthrough panel
+  const wtPanel = document.getElementById('panel-walkthrough');
+  if (wtPanel) wtPanel.style.display = 'none';
+
+  // Hide the live-edit "Customize Live" block on Property tab
+  document.querySelectorAll('.customize').forEach(el => el.style.display = 'none');
+  // Hide the live-edit "Net Sheet controls" panel
+  document.querySelectorAll('.net-controls').forEach(el => el.style.display = 'none');
+  // Hide the floating Print and Send buttons (the client doesn't need to email the team)
+  document.querySelectorAll('.send-team-block').forEach(el => el.style.display = 'none');
+
+  // If client landed on the walkthrough tab somehow, redirect to property
+  const propBtn = document.querySelector('nav.tabs button[data-tab="property"]');
+  if (propBtn) propBtn.click();
+})();
+
+renderNine();
+renderWalkthrough();
+renderBedrooms();
+renderSystems();
+renderPrep();
+renderAll();  // single source of truth for initial render
+</script>
+
+<!-- Floating Print to PDF button — hidden in print output, prints entire dashboard -->
+<button class="print-btn" onclick="window.print()" aria-label="Print dashboard to PDF">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+  Print to PDF
+</button>
+
+</body>
+</html>
