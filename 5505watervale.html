@@ -698,6 +698,114 @@
     font-size: 19px; font-weight: 400; color: var(--deep-navy);
     margin: 0 0 14px 0;
   }
+
+  /* Highlights + Checklist sections — same card pattern */
+  .wt-highlights-section, .wt-checklist-section {
+    margin-top: 28px;
+    background: white;
+    border-radius: 4px;
+    border: 1px solid var(--soft-gray);
+    border-top: 3px solid var(--mauve);
+    padding: 22px 24px;
+  }
+  .wt-highlights-section h3, .wt-checklist-section h3 {
+    font-family: Georgia, serif;
+    font-size: 19px; font-weight: 400; color: var(--deep-navy);
+    margin: 0 0 6px 0;
+  }
+  .wt-highlights-sub, .wt-checklist-sub {
+    font-size: 13px;
+    color: var(--slate-blue);
+    margin: 0 0 14px 0;
+    line-height: 1.5;
+  }
+  .wt-highlights-section textarea {
+    width: 100%;
+    min-height: 140px;
+    padding: 12px 14px;
+    border: 1px solid var(--soft-gray);
+    border-radius: 3px;
+    font-family: inherit;
+    font-size: 13px;
+    color: var(--charcoal);
+    background: var(--cream);
+    resize: vertical;
+    line-height: 1.6;
+  }
+  .wt-highlights-section textarea:focus {
+    outline: 2px solid var(--mauve);
+    outline-offset: -2px;
+    border-color: var(--mauve);
+  }
+  .wt-highlights-section textarea::placeholder {
+    color: var(--slate-blue);
+    opacity: 0.7;
+    line-height: 1.6;
+  }
+
+  /* Checklist grid — 2-col on desktop, 1-col on mobile */
+  .wt-checklist-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px 16px;
+  }
+  .wt-checklist-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 10px;
+    background: var(--cream);
+    border: 1px solid var(--soft-gray);
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all 0.15s;
+    font-size: 13px;
+    color: var(--charcoal);
+    user-select: none;
+  }
+  .wt-checklist-item:hover {
+    border-color: var(--mauve);
+    background: white;
+  }
+  .wt-checklist-checkbox {
+    display: inline-flex;
+    align-items: center; justify-content: center;
+    width: 20px; height: 20px;
+    border: 1px solid var(--soft-gray);
+    border-radius: 3px;
+    background: white;
+    flex-shrink: 0;
+    transition: all 0.15s;
+  }
+  .wt-checklist-item.checked .wt-checklist-checkbox {
+    background: var(--mauve);
+    border-color: var(--mauve);
+  }
+  .wt-checklist-item.checked .wt-checklist-checkbox::after {
+    content: '✓';
+    color: white;
+    font-size: 13px;
+    line-height: 1;
+  }
+  .wt-checklist-item.checked {
+    background: var(--magenta-tint);
+    border-color: var(--mauve);
+  }
+  .wt-checklist-other input {
+    flex: 1;
+    border: none;
+    background: transparent;
+    font-size: 13px;
+    font-family: inherit;
+    color: var(--charcoal);
+    padding: 0;
+    outline: none;
+  }
+  .wt-checklist-other input::placeholder {
+    color: var(--slate-blue);
+    opacity: 0.6;
+    font-style: italic;
+  }
   .wt-bedroom-table { width: 100%; border-collapse: collapse; }
   .wt-bedroom-table th {
     text-align: left;
@@ -946,28 +1054,104 @@
 
   @media (max-width: 768px) {
     main { padding: 24px; }
-    header.top { padding: 24px; }
+
+    /* HEADER — stack left/right blocks, shrink all type sizes */
+    header.top { padding: 24px 20px; }
+    header.top .inner {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 24px;
+    }
+    header.top .title { font-size: 24px; line-height: 1.15; }
+    header.top .title sup { font-size: 11px; }
+    header.top .tagline { font-size: 13px; margin-top: 6px; }
+    header.top .right {
+      text-align: left;
+      width: 100%;
+      padding-top: 18px;
+      border-top: 1px solid rgba(209,209,209,0.2);
+    }
+    header.top .prep-label { font-size: 9px; letter-spacing: 1.6px; }
+    header.top .prep-name { font-size: 22px; margin-top: 2px; line-height: 1.15; }
+    header.top .prep-by-line { font-size: 12px; margin-top: 8px; line-height: 1.4; }
+
+    /* Property tab grid stacks */
     .property-header .top-row { flex-direction: column; }
     .property-header .price-block { text-align: left; }
-    .nine-grid, .prep-notes-grid, .checklist-grid, .wt-area-grid, .vendor-grid { grid-template-columns: 1fr; }
+    .nine-grid, .prep-notes-grid, .checklist-grid, .wt-area-grid, .vendor-grid, .wt-checklist-grid { grid-template-columns: 1fr; }
     .wt-hoa-garage { grid-template-columns: 1fr; }
     .wt-bedroom-table { font-size: 11px; }
     .wt-bedroom-table th, .wt-bedroom-table td { padding: 6px 4px; }
-    table.net-table thead th { padding: 14px 8px; }
-    table.net-table .col-price { font-size: 18px; }
-    table.net-table .col-label { font-size: 10px; letter-spacing: 1.2px; }
-    table.net-table tbody td { padding: 9px 8px; font-size: 12px; }
-    table.net-table tbody td.row-label .ns-note { font-size: 10px; }
-    table.net-table tfoot td { padding: 14px 8px; }
-    table.net-table tfoot td.row-label { font-size: 11px; letter-spacing: 1px; }
-    table.net-table tfoot td.value { font-size: 16px; }
+
+    /* NET SHEET — give label column less width, value columns more breathing room */
+    table.net-table { table-layout: fixed; }
+    table.net-table thead th.col-header-label { width: 38%; }
+    table.net-table thead th { padding: 12px 4px; width: 20.66%; }
+    table.net-table thead th .col-price {
+      font-size: 14px;
+      letter-spacing: -0.4px;
+      word-break: keep-all;
+      white-space: nowrap;
+    }
+    table.net-table thead th .col-label {
+      font-size: 9px;
+      letter-spacing: 0.8px;
+    }
+    table.net-table tbody td { padding: 9px 5px; font-size: 11px; word-wrap: break-word; }
+    table.net-table tbody td.row-label {
+      font-size: 12px;
+      line-height: 1.3;
+      padding: 9px 8px 9px 6px;
+    }
+    table.net-table tbody td.row-label .ns-note {
+      font-size: 9.5px;
+      line-height: 1.35;
+      margin-top: 3px;
+    }
+    table.net-table tbody td.value {
+      font-size: 11px;
+      letter-spacing: -0.3px;
+    }
+
+    /* NET SHEET TFOOT — "Estimated Net to Seller" must not get squashed */
+    table.net-table tfoot td { padding: 12px 4px; }
+    table.net-table tfoot td.row-label {
+      font-size: 10px;
+      letter-spacing: 0.8px;
+      line-height: 1.25;
+      padding-left: 6px;
+    }
+    table.net-table tfoot td.value {
+      font-size: 13px;
+      letter-spacing: -0.4px;
+      white-space: nowrap;
+    }
+
     .net-controls .ctrl-grid { grid-template-columns: 1fr 1fr; }
     .customize .grid { grid-template-columns: 1fr; }
     .property-title { font-size: 28px; }
+
+    /* Timeline calendar more compact */
     .cal-cell { min-height: 64px; padding: 4px; }
     .cal-event { font-size: 9px; padding: 2px 4px; }
     .cal-event svg { display: none; }
     .cal-dow { font-size: 9px; padding: 6px 2px; }
+  }
+
+  @media (max-width: 480px) {
+    /* Extra-tight phone breakpoint */
+    main { padding: 16px; }
+    header.top { padding: 20px 16px; }
+    header.top .title { font-size: 22px; }
+    header.top .prep-name { font-size: 19px; }
+
+    /* On the smallest screens, give the net sheet horizontal scroll
+       rather than squashing it further — readable beats clever */
+    .net-table-wrap {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+    table.net-table { min-width: 420px; }
   }
 
   /* ============================================================
@@ -1300,6 +1484,32 @@
     <!-- Property systems (Water, Air, Heat) + HOA + Garage -->
     <div class="wt-systems-section" id="wt-systems"></div>
 
+    <!-- HIGHLIGHTS — top features / things to definitely mention -->
+    <div class="wt-highlights-section">
+      <h3>Highlights & Must-Mentions</h3>
+      <p class="wt-highlights-sub">5–10 best things about this home — anything that needs to make it into the listing remarks, MLS description, or marketing copy. Bullet points, one per line.</p>
+      <textarea id="wt-highlights" placeholder="• Owner suite on the main level
+• Recent kitchen reno (2024) — quartz, gas range, butler's pantry
+• 0.4-acre flat back yard, fully fenced
+• 5 min walk to Crozet Library + Mudhouse
+• Whole-house generator
+• ..."></textarea>
+    </div>
+
+    <!-- TEAM CHECKLIST — items to send Ann + Yam -->
+    <div class="wt-checklist-section">
+      <h3>For Ann & Yam — Confirm Collected</h3>
+      <p class="wt-checklist-sub">Items the listing team needs from the seller. Check off what you got during the appointment so we can chase what's still outstanding.</p>
+      <div class="wt-checklist-grid" id="wt-team-checklist"></div>
+    </div>
+
+    <!-- VENDOR CHECKLIST — what the seller is going to need -->
+    <div class="wt-checklist-section">
+      <h3>Vendor Referrals to Send the Seller</h3>
+      <p class="wt-checklist-sub">Check off any the seller asked about or that you proactively want to send. We'll bundle them into a single email with our preferred contacts.</p>
+      <div class="wt-checklist-grid" id="wt-vendor-checklist"></div>
+    </div>
+
     <!-- AGENT FOCUS AREAS — captured here on Walkthrough, auto-syncs to Prep tab -->
     <h2 class="wt-focus-header serif">Focus Areas for the Listing</h2>
     <p class="wt-focus-sub">Specific prep recommendations for this home — these auto-populate on the seller-facing Prep tab. Type once, appears in both places.</p>
@@ -1543,6 +1753,27 @@ const ADDITIONAL_BEDROOMS = [
   { id: 'bd5', label: 'Bedroom #5' },
 ];
 const BEDROOM_ATTRS = ['Full Bath', 'Half Bath', 'Jack & Jill', 'Walk-in closet', 'Extra-large closet', 'Carpet', 'Hardwood'];
+
+// ============================================================
+// CHECKLISTS — items to chase from seller / vendors to refer
+// ============================================================
+const TEAM_CHECKLIST = [
+  { id: 'team-mortgage',     label: 'Mortgage balance' },
+  { id: 'team-floorplan',    label: 'Copy of the floor plan' },
+  { id: 'team-survey',       label: 'Survey of the lot lines' },
+  { id: 'team-improvements', label: 'Recent improvements list' },
+];
+
+const VENDOR_CHECKLIST = [
+  { id: 'vendor-paint',         label: 'Paint' },
+  { id: 'vendor-movers',        label: 'Movers' },
+  { id: 'vendor-landscaping',   label: 'Yard / landscaping' },
+  { id: 'vendor-flooring',      label: 'Flooring' },
+  { id: 'vendor-powerwashing',  label: 'Power-washing' },
+  { id: 'vendor-stagers',       label: 'Stagers' },
+  { id: 'vendor-lender',        label: 'Lender' },
+  { id: 'vendor-referral',      label: 'Referral to out-of-area agent' },
+];
 const VENDORS = ['Painter', 'Landscaper', 'Cleaner', 'Handyman', 'Stager (if needed)', 'Pressure Washer'];
 const CHECKLIST_AREAS = [
   {
@@ -2115,6 +2346,50 @@ function renderPrep() {
   document.getElementById('vendorGrid').innerHTML = VENDORS.map(v => `<div class="vendor-slot"><div class="cat">${v}</div><div class="v">To be assigned</div></div>`).join('');
 }
 
+function renderChecklists() {
+  // Team checklist (items to confirm from seller)
+  const teamWrap = document.getElementById('wt-team-checklist');
+  if (teamWrap) {
+    const items = TEAM_CHECKLIST.map(item => `
+      <div class="wt-checklist-item" id="${item.id}" onclick="toggleChecklistItem(this)">
+        <span class="wt-checklist-checkbox"></span>
+        <span>${item.label}</span>
+      </div>
+    `).join('');
+    const otherRow = `
+      <div class="wt-checklist-item wt-checklist-other" id="team-other" onclick="toggleChecklistItem(this, event)">
+        <span class="wt-checklist-checkbox"></span>
+        <input type="text" id="team-other-text" placeholder="Other (specify)..." onclick="event.stopPropagation()" />
+      </div>
+    `;
+    teamWrap.innerHTML = items + otherRow;
+  }
+
+  // Vendor checklist (referrals to send seller)
+  const vendorWrap = document.getElementById('wt-vendor-checklist');
+  if (vendorWrap) {
+    const items = VENDOR_CHECKLIST.map(item => `
+      <div class="wt-checklist-item" id="${item.id}" onclick="toggleChecklistItem(this)">
+        <span class="wt-checklist-checkbox"></span>
+        <span>${item.label}</span>
+      </div>
+    `).join('');
+    const otherRow = `
+      <div class="wt-checklist-item wt-checklist-other" id="vendor-other" onclick="toggleChecklistItem(this, event)">
+        <span class="wt-checklist-checkbox"></span>
+        <input type="text" id="vendor-other-text" placeholder="Other (specify)..." onclick="event.stopPropagation()" />
+      </div>
+    `;
+    vendorWrap.innerHTML = items + otherRow;
+  }
+}
+
+function toggleChecklistItem(el, evt) {
+  // If the click came from the text input inside, ignore
+  if (evt && evt.target && evt.target.tagName === 'INPUT') return;
+  el.classList.toggle('checked');
+}
+
 function renderAll() {
   // Refresh ALL state-dependent UI on every input change.
   // This guarantees that net sheet, timeline, calendar, and hero price stay in sync
@@ -2270,6 +2545,53 @@ function sendNotesToTeam() {
     if (exteriorNotes) { lines.push('Exterior:'); lines.push(exteriorNotes); lines.push(''); }
   }
 
+  // ===== Highlights / Must-Mentions =====
+  const highlightsEl = document.getElementById('wt-highlights');
+  const highlights = highlightsEl && highlightsEl.value ? highlightsEl.value.trim() : '';
+  if (highlights) {
+    lines.push('─────────────────────────────────────');
+    lines.push('HIGHLIGHTS & MUST-MENTIONS');
+    lines.push('─────────────────────────────────────');
+    lines.push(highlights);
+    lines.push('');
+  }
+
+  // ===== Team checklist (items to collect from seller) =====
+  const teamChecked = TEAM_CHECKLIST.filter(item => {
+    const el = document.getElementById(item.id);
+    return el && el.classList.contains('checked');
+  }).map(item => item.label);
+  const teamOtherEl = document.getElementById('team-other');
+  const teamOtherTextEl = document.getElementById('team-other-text');
+  if (teamOtherEl && teamOtherEl.classList.contains('checked') && teamOtherTextEl && teamOtherTextEl.value.trim()) {
+    teamChecked.push(`Other: ${teamOtherTextEl.value.trim()}`);
+  }
+  if (teamChecked.length > 0) {
+    lines.push('─────────────────────────────────────');
+    lines.push('CONFIRMED COLLECTED FROM SELLER');
+    lines.push('─────────────────────────────────────');
+    teamChecked.forEach(l => lines.push('✓ ' + l));
+    lines.push('');
+  }
+
+  // ===== Vendor referrals to send seller =====
+  const vendorChecked = VENDOR_CHECKLIST.filter(item => {
+    const el = document.getElementById(item.id);
+    return el && el.classList.contains('checked');
+  }).map(item => item.label);
+  const vendorOtherEl = document.getElementById('vendor-other');
+  const vendorOtherTextEl = document.getElementById('vendor-other-text');
+  if (vendorOtherEl && vendorOtherEl.classList.contains('checked') && vendorOtherTextEl && vendorOtherTextEl.value.trim()) {
+    vendorChecked.push(`Other: ${vendorOtherTextEl.value.trim()}`);
+  }
+  if (vendorChecked.length > 0) {
+    lines.push('─────────────────────────────────────');
+    lines.push('VENDOR REFERRALS TO SEND SELLER');
+    lines.push('─────────────────────────────────────');
+    vendorChecked.forEach(l => lines.push('→ ' + l));
+    lines.push('');
+  }
+
   lines.push('─────────────────────────────────────');
   lines.push('Sent from the BestSeller Method™ dashboard.');
 
@@ -2376,6 +2698,7 @@ renderNine();
 renderWalkthrough();
 renderBedrooms();
 renderSystems();
+renderChecklists();
 renderPrep();
 renderAll();  // single source of truth for initial render
 </script>
