@@ -1,0 +1,1473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The BestSeller Method™ — 19 Woodridge Rd</title>
+<style>
+/* ===== Brand palette (Canva Story House Signature Series) ===== */
+:root {
+  --navy: #343F55;
+  --slate: #65778D;
+  --gray: #D1D1D1;
+  --magenta: #C64097;
+  --mauve: #A36DA1;
+  --teal-soft: #71A7B3;
+  --teal-bright: #28ACB8;
+  --magenta-tint: #F4DCE9;
+  --cream: #FAFAF8;
+  --charcoal: #2E2E2E;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: var(--cream); color: var(--charcoal); font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 15px; line-height: 1.55; }
+a { color: var(--mauve); }
+
+/* ===== Header ===== */
+.header {
+  background: var(--navy);
+  color: var(--cream);
+  padding: 36px 48px 30px;
+  border-bottom: 3px solid var(--mauve);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+.header-left { max-width: 60%; }
+.h-title { font-family: Georgia, 'Times New Roman', serif; font-size: 34px; font-weight: normal; margin: 0; letter-spacing: -0.3px; }
+.h-tagline { font-family: Georgia, serif; font-style: italic; font-size: 14px; color: var(--gray); opacity: 0.85; margin-top: 6px; letter-spacing: 0.3px; }
+.header-right { text-align: right; }
+.h-prepared { font-size: 10px; letter-spacing: 2px; color: var(--gray); text-transform: uppercase; margin-bottom: 4px; }
+.h-client { font-family: Georgia, serif; font-size: 30px; color: var(--cream); line-height: 1.15; margin-bottom: 6px; }
+.h-attrib { font-family: Georgia, serif; font-size: 14px; color: var(--cream); }
+.h-attrib em { color: var(--gray); font-style: italic; }
+.h-attrib .brand-mauve { color: var(--mauve); font-style: normal; }
+
+/* ===== Tab nav ===== */
+.tabnav {
+  background: var(--cream);
+  border-bottom: 1px solid var(--gray);
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 48px;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+.tabnav button {
+  background: none;
+  border: none;
+  padding: 16px 20px;
+  font-family: 'Helvetica Neue', sans-serif;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--slate);
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+  margin-bottom: -1px;
+  transition: color 0.15s;
+}
+.tabnav button:hover { color: var(--charcoal); }
+.tabnav button.active {
+  color: var(--charcoal);
+  border-bottom-color: var(--mauve);
+  font-weight: 600;
+}
+
+main { padding: 36px 48px 80px; max-width: 1200px; margin: 0 auto; }
+.panel { display: none; }
+.panel.active { display: block; }
+
+/* ===== Section eyebrows / titles ===== */
+.eyebrow { font-size: 11px; letter-spacing: 2px; color: var(--mauve); text-transform: uppercase; font-weight: 600; margin-bottom: 8px; }
+.section-title { font-family: Georgia, serif; font-size: 28px; margin: 0 0 12px; color: var(--charcoal); font-weight: normal; }
+.section-sub { color: var(--slate); margin-bottom: 24px; max-width: 720px; }
+
+/* ===== Property tab ===== */
+.prop-headline { margin-bottom: 32px; }
+.prop-address { font-family: Georgia, serif; font-size: 44px; line-height: 1.1; margin: 0 0 6px; color: var(--charcoal); font-weight: normal; }
+.prop-loc { color: var(--slate); font-size: 15px; margin-bottom: 14px; }
+.prop-stats { color: var(--slate); font-size: 14px; }
+.prop-stats span { margin-right: 18px; }
+.prop-price-block { margin-top: 28px; }
+.price-label { font-size: 11px; letter-spacing: 2px; color: var(--mauve); text-transform: uppercase; }
+.price-figure { font-family: Georgia, serif; font-size: 56px; line-height: 1; margin-top: 6px; color: var(--charcoal); }
+
+.method-intro {
+  background: white;
+  border-left: 4px solid var(--mauve);
+  padding: 24px 28px;
+  margin: 36px 0;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+.method-intro h3 { font-family: Georgia, serif; font-size: 22px; margin: 0 0 10px; font-weight: normal; }
+.method-intro p { margin: 0; color: var(--slate); }
+
+/* Customize Live block */
+.customize-live {
+  background: white;
+  padding: 24px 28px;
+  border-radius: 4px;
+  border: 1px solid var(--gray);
+  margin-top: 24px;
+}
+.customize-live .eyebrow { margin-bottom: 12px; }
+.cl-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.cl-field label { display: block; font-size: 12px; color: var(--slate); margin-bottom: 4px; }
+.cl-field input { width: 100%; padding: 8px 10px; border: 1px solid var(--gray); border-radius: 3px; font-size: 14px; background: var(--cream); }
+
+/* Compressed timeline alert */
+.alert-compressed {
+  background: white;
+  border-left: 4px solid var(--slate);
+  padding: 16px 20px;
+  margin: 24px 0;
+  border-radius: 3px;
+}
+.alert-compressed strong { color: var(--charcoal); display: block; margin-bottom: 4px; }
+
+/* ===== Method tab — nine grid ===== */
+.nine-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 24px;
+}
+.step-card {
+  background: white;
+  padding: 20px 22px;
+  border-radius: 4px;
+  border: 1px solid var(--gray);
+}
+.step-head { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
+.step-num {
+  background: var(--mauve);
+  color: white;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 13px;
+  flex-shrink: 0;
+}
+.step-title { font-family: 'Helvetica Neue', sans-serif; font-weight: 700; font-size: 15px; color: var(--charcoal); }
+.step-body { font-size: 13px; color: var(--slate); line-height: 1.55; }
+
+/* ===== Net Sheet tab ===== */
+.ns-controls {
+  background: white;
+  padding: 20px 24px;
+  border-radius: 4px;
+  border: 1px solid var(--gray);
+  margin-bottom: 24px;
+}
+.ns-controls .eyebrow { margin-bottom: 12px; }
+.ns-ctrl-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+.ns-ctrl-field label { display: block; font-size: 11px; color: var(--slate); margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.5px; }
+.ns-ctrl-field input { width: 100%; padding: 8px 10px; border: 1px solid var(--gray); border-radius: 3px; font-size: 13px; background: var(--cream); font-variant-numeric: tabular-nums; }
+
+.ns-table-wrap { overflow-x: auto; background: white; border-radius: 4px; border: 1px solid var(--gray); }
+.ns-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+.ns-table thead th {
+  background: var(--navy);
+  color: var(--cream);
+  padding: 14px 16px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.3px;
+}
+.ns-table thead th.strategic-col { background: var(--mauve); }
+.ns-table thead th.value-col {
+  text-align: center;
+  width: 16%;
+  font-family: 'Helvetica Neue', sans-serif;
+  font-variant-numeric: tabular-nums lining-nums;
+  letter-spacing: -0.2px;
+}
+.ns-table thead th.label-col { width: 52%; }
+.ns-table thead th .col-sub {
+  display: block;
+  font-size: 11px;
+  font-weight: normal;
+  opacity: 0.85;
+  margin-top: 2px;
+  letter-spacing: 0.5px;
+}
+.ns-section-row td {
+  background: var(--magenta-tint);
+  padding: 10px 16px;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--charcoal);
+  font-weight: 600;
+}
+.ns-table tbody td {
+  padding: 11px 16px;
+  border-bottom: 1px solid #EEE;
+}
+.ns-table tbody td.value {
+  text-align: center;
+  font-variant-numeric: tabular-nums lining-nums;
+  letter-spacing: -0.2px;
+  font-family: 'Helvetica Neue', sans-serif;
+}
+.ns-table tbody td.value.strategic { background: rgba(163, 109, 161, 0.06); }
+.ns-table tbody td:not(:first-child) { border-left: 1px solid #F2F2F2; }
+.ns-note { font-size: 11px; color: var(--slate); font-style: italic; display: block; margin-top: 2px; }
+.ns-subtotal td { font-weight: 600; background: #FAFAF8; }
+.ns-table tfoot td {
+  background: var(--navy);
+  color: var(--cream);
+  padding: 16px;
+  font-family: Georgia, serif;
+  font-size: 18px;
+  text-align: center;
+  font-variant-numeric: tabular-nums lining-nums;
+}
+.ns-table tfoot td:first-child { text-align: left; font-family: 'Helvetica Neue', sans-serif; font-size: 13px; letter-spacing: 1.5px; text-transform: uppercase; }
+.ns-table tfoot td:not(:first-child) { border-left: 1px solid #4A5670; }
+.ns-table tfoot td.strategic-foot { background: linear-gradient(var(--navy), var(--navy)); position: relative; }
+.ns-table tfoot td.strategic-foot::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--magenta);
+}
+
+/* ===== Timeline tab ===== */
+.timeline-cal {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+  background: white;
+  padding: 24px;
+  border-radius: 4px;
+  border: 1px solid var(--gray);
+  margin-bottom: 30px;
+}
+.cal-day {
+  aspect-ratio: 1.1;
+  padding: 8px;
+  border-radius: 3px;
+  background: var(--cream);
+  border: 1px solid #EEE;
+  font-size: 12px;
+  color: var(--slate);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.cal-day.prep { background: rgba(113, 167, 179, 0.18); color: var(--charcoal); }
+.cal-day.launch { background: rgba(163, 109, 161, 0.22); color: var(--charcoal); }
+.cal-day.live { background: rgba(198, 64, 151, 0.18); color: var(--charcoal); }
+.cal-date { font-weight: 600; font-size: 13px; }
+.cal-label { font-size: 10px; letter-spacing: 0.5px; }
+.cal-legend { display: flex; gap: 18px; margin-top: 12px; font-size: 12px; color: var(--slate); flex-wrap: wrap; }
+.cal-legend span { display: inline-flex; align-items: center; gap: 6px; }
+.cal-legend span::before { content: ''; width: 12px; height: 12px; border-radius: 2px; display: inline-block; }
+.cal-legend .lg-prep::before { background: rgba(113, 167, 179, 0.6); }
+.cal-legend .lg-launch::before { background: rgba(163, 109, 161, 0.7); }
+.cal-legend .lg-live::before { background: rgba(198, 64, 151, 0.6); }
+
+.milestones { background: white; padding: 24px 28px; border-radius: 4px; border: 1px solid var(--gray); }
+.milestone {
+  display: grid;
+  grid-template-columns: 130px 1fr;
+  gap: 20px;
+  padding: 14px 0;
+  border-bottom: 1px solid #F0F0F0;
+}
+.milestone:last-child { border-bottom: none; }
+.ms-date { font-family: Georgia, serif; font-size: 15px; color: var(--mauve); font-weight: 600; }
+.ms-title { font-weight: 600; font-size: 14px; margin-bottom: 3px; }
+.ms-meta { font-size: 12px; color: var(--slate); }
+
+/* ===== Walkthrough tab ===== */
+.wt-area-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+.wt-card {
+  background: white;
+  padding: 20px 22px;
+  border-radius: 4px;
+  border: 1px solid var(--gray);
+}
+.wt-card h4 {
+  font-family: Georgia, serif;
+  font-size: 18px;
+  margin: 0 0 14px;
+  font-weight: normal;
+  color: var(--charcoal);
+}
+.chip-group { margin-bottom: 12px; }
+.chip-group-label { font-size: 11px; color: var(--slate); text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 6px; }
+.chip {
+  display: inline-block;
+  padding: 5px 11px;
+  margin: 0 4px 4px 0;
+  border: 1px solid var(--gray);
+  border-radius: 14px;
+  font-size: 12px;
+  cursor: pointer;
+  background: var(--cream);
+  color: var(--charcoal);
+  user-select: none;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+.chip:hover { border-color: var(--mauve); }
+.chip.selected { background: var(--mauve); color: white; border-color: var(--mauve); }
+.wt-input { width: 100%; padding: 6px 10px; border: 1px solid var(--gray); border-radius: 3px; font-size: 13px; background: var(--cream); margin-bottom: 8px; }
+.wt-textarea { width: 100%; padding: 8px 10px; border: 1px solid var(--gray); border-radius: 3px; font-size: 13px; background: var(--cream); min-height: 60px; resize: vertical; font-family: inherit; }
+
+.bedroom-table { width: 100%; border-collapse: collapse; background: white; border-radius: 4px; border: 1px solid var(--gray); overflow: hidden; }
+.bedroom-table th, .bedroom-table td { padding: 8px 12px; border-bottom: 1px solid #EEE; text-align: left; font-size: 13px; }
+.bedroom-table thead th { background: var(--navy); color: var(--cream); font-weight: 600; font-size: 12px; }
+.bedroom-table tbody td.bd-attr { color: var(--slate); font-size: 12px; }
+.bd-check { width: 22px; height: 22px; border: 1px solid var(--gray); border-radius: 3px; cursor: pointer; display: inline-block; background: var(--cream); transition: background 0.15s; }
+.bd-check.checked { background: var(--mauve); position: relative; }
+.bd-check.checked::after { content: '✓'; color: white; position: absolute; left: 5px; top: 0; font-size: 14px; }
+.bd-textinput { width: 100%; padding: 4px 8px; border: 1px solid var(--gray); border-radius: 3px; font-size: 12px; background: var(--cream); }
+
+.systems-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; margin-top: 24px; }
+.system-card { background: white; padding: 18px; border-radius: 4px; border: 1px solid var(--gray); }
+.system-card h5 { margin: 0 0 8px; font-size: 13px; text-transform: uppercase; letter-spacing: 1px; color: var(--mauve); }
+.mini-card-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 18px; }
+
+.wt-checklist { background: white; padding: 20px 24px; border-radius: 4px; border: 1px solid var(--gray); margin-top: 24px; }
+.wt-checklist h4 { font-family: Georgia, serif; font-size: 18px; margin: 0 0 4px; font-weight: normal; }
+.wt-checklist .ck-sub { color: var(--slate); font-size: 13px; margin-bottom: 14px; }
+.checklist-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.ck-item {
+  padding: 8px 12px;
+  border: 1px solid var(--gray);
+  border-radius: 3px;
+  font-size: 13px;
+  cursor: pointer;
+  background: var(--cream);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+  user-select: none;
+}
+.ck-item:hover { border-color: var(--mauve); }
+.ck-item.checked { background: var(--mauve); color: white; border-color: var(--mauve); }
+.ck-item .ck-box { width: 14px; height: 14px; border: 1px solid var(--gray); border-radius: 2px; background: white; flex-shrink: 0; }
+.ck-item.checked .ck-box { background: white; position: relative; }
+.ck-item.checked .ck-box::after { content: '✓'; color: var(--mauve); position: absolute; left: 2px; top: -3px; font-size: 12px; font-weight: bold; }
+
+.focus-block { background: white; padding: 20px 24px; border-radius: 4px; border: 1px solid var(--gray); margin-top: 24px; }
+.focus-block label { display: block; font-size: 11px; color: var(--slate); margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.8px; margin-top: 12px; }
+.focus-block textarea { width: 100%; padding: 10px 12px; border: 1px solid var(--gray); border-radius: 3px; font-size: 14px; min-height: 80px; resize: vertical; font-family: inherit; background: var(--cream); }
+
+.send-team-block {
+  background: var(--navy);
+  color: var(--cream);
+  padding: 24px 28px;
+  border-radius: 4px;
+  margin-top: 30px;
+  text-align: center;
+}
+.send-team-block h4 { font-family: Georgia, serif; font-size: 22px; margin: 0 0 8px; font-weight: normal; color: var(--cream); }
+.send-team-block p { color: var(--gray); margin: 0 0 16px; font-size: 14px; }
+.btn-email {
+  background: var(--mauve);
+  color: white;
+  border: none;
+  padding: 12px 28px;
+  font-size: 14px;
+  border-radius: 24px;
+  cursor: pointer;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  font-family: inherit;
+  transition: background 0.15s;
+}
+.btn-email:hover { background: #8E5B8B; }
+
+/* ===== Prep tab ===== */
+.prep-focus-mirror {
+  background: white;
+  border-left: 4px solid var(--slate);
+  padding: 16px 22px;
+  margin-bottom: 14px;
+  border-radius: 3px;
+}
+.prep-focus-mirror h5 { font-size: 11px; letter-spacing: 1.5px; color: var(--slate); text-transform: uppercase; margin: 0 0 6px; }
+.prep-focus-mirror .mirror-body { font-size: 14px; color: var(--charcoal); white-space: pre-wrap; }
+.prep-focus-mirror .mirror-empty { color: var(--slate); font-style: italic; }
+
+.staging-area { background: white; padding: 18px 22px; border-radius: 4px; border: 1px solid var(--gray); margin-bottom: 14px; }
+.staging-area h5 { font-family: Georgia, serif; font-size: 17px; margin: 0 0 10px; font-weight: normal; color: var(--charcoal); }
+.staging-area ul { margin: 0; padding-left: 20px; }
+.staging-area li { font-size: 13px; color: var(--charcoal); margin-bottom: 4px; }
+
+/* ===== Footer ===== */
+footer {
+  background: var(--navy);
+  color: var(--cream);
+  padding: 28px 48px 24px;
+  border-top: 3px solid var(--mauve);
+  text-align: center;
+}
+footer .ft-wordmark { font-family: Georgia, serif; font-size: 18px; }
+footer .ft-tagline { font-family: Georgia, serif; font-style: italic; color: var(--gray); opacity: 0.85; font-size: 13px; margin-top: 6px; }
+footer .ft-addr { color: var(--gray); font-size: 12px; margin-top: 14px; }
+
+/* ===== Print to PDF button ===== */
+.btn-print {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background: var(--mauve);
+  color: white;
+  border: none;
+  padding: 12px 22px;
+  border-radius: 24px;
+  font-size: 13px;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.2);
+  font-family: inherit;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  z-index: 100;
+}
+.btn-print:hover { background: #8E5B8B; }
+
+/* ===== Print CSS ===== */
+@media print {
+  .tabnav, .btn-print, .customize-live, .ns-controls, .send-team-block { display: none !important; }
+  .panel { display: block !important; page-break-before: always; }
+  .panel:first-of-type { page-break-before: avoid; }
+  body { background: white; }
+  .header { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .ns-table thead th, .ns-table tfoot td, .ns-section-row td, .step-num, .chip.selected, .ck-item.checked {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  @page { size: letter; margin: 0.5in; }
+}
+
+/* ===== Mobile ===== */
+@media (max-width: 768px) {
+  .header { flex-direction: column; padding: 24px; }
+  .header-left, .header-right { max-width: 100%; text-align: left; }
+  .h-title { font-size: 26px; }
+  .h-client { font-size: 24px; }
+  main { padding: 24px 18px 60px; }
+  .tabnav { padding: 0 12px; overflow-x: auto; }
+  .tabnav button { padding: 14px 12px; font-size: 11px; }
+  .nine-grid, .wt-area-grid, .systems-grid, .checklist-grid, .cl-grid, .ns-ctrl-grid { grid-template-columns: 1fr; }
+  .prop-address { font-size: 30px; }
+  .price-figure { font-size: 40px; }
+  .ns-table { table-layout: fixed; }
+  .ns-table thead th.label-col { width: 38%; }
+  .ns-table thead th.value-col { width: 20.66%; font-size: 14px; letter-spacing: -0.3px; white-space: nowrap; }
+  .ns-table tfoot td { font-size: 14px; letter-spacing: -0.3px; }
+  .ns-table tfoot td:not(:first-child) { white-space: nowrap; }
+  .ns-table tfoot td:first-child { font-size: 11px; letter-spacing: 1px; }
+  .milestone { grid-template-columns: 1fr; gap: 4px; }
+  .timeline-cal { grid-template-columns: repeat(7, 1fr); gap: 4px; padding: 12px; }
+  .cal-day { padding: 4px; font-size: 10px; }
+  .cal-date { font-size: 11px; }
+}
+@media (max-width: 480px) {
+  main { padding: 18px 12px 50px; }
+  .header { padding: 20px 16px; }
+  .h-title { font-size: 22px; }
+  .h-client { font-size: 20px; }
+  .ns-table-wrap { overflow-x: auto; }
+  .ns-table { min-width: 420px; }
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-left">
+    <h1 class="h-title">The BestSeller Method™</h1>
+    <div class="h-tagline">Designed, Not Default.</div>
+  </div>
+  <div class="header-right">
+    <div class="h-prepared">Prepared For</div>
+    <div class="h-client">Tim &amp; Jennifer McGarey</div>
+    <div class="h-attrib"><em>by</em> Errin Searcy · Story House <span class="brand-mauve">Real Estate</span></div>
+  </div>
+</header>
+
+<nav class="tabnav">
+  <button class="active" data-tab="property">Property</button>
+  <button data-tab="method">The Method</button>
+  <button data-tab="netsheet">Net Sheet</button>
+  <button data-tab="timeline">Timeline</button>
+  <button data-tab="walkthrough" id="tab-walkthrough">Walkthrough</button>
+  <button data-tab="prep">Prep</button>
+</nav>
+
+<main>
+
+<!-- ===== PROPERTY ===== -->
+<section class="panel active" id="panel-property">
+  <div class="prop-headline">
+    <h2 class="prop-address">19 Woodridge Road</h2>
+    <div class="prop-loc">Palmyra, VA 22963 · Lake Monticello · Fluvanna County</div>
+    <div class="prop-stats">
+      <span><strong>—</strong> Bedrooms</span>
+      <span><strong>—</strong> Baths</span>
+      <span><strong>—</strong> sqft</span>
+      <span><strong>—</strong> Built</span>
+    </div>
+    <div class="prop-price-block">
+      <div class="price-label">Strategic List Price</div>
+      <div class="price-figure" id="display-price">TBD</div>
+    </div>
+  </div>
+
+  <div class="method-intro">
+    <h3>Selling a home isn't a checklist. It's a method.</h3>
+    <p>The BestSeller Method™ is Story House Real Estate's systematic, nine-step approach to listing your home — designed to maximize buyer interest in the critical first 72 hours, set you up with clean comparables and a credible price, and protect your interests through negotiation and close. Every step is intentional. Nothing is left to default.</p>
+  </div>
+
+  <div class="alert-compressed">
+    <strong>Timeline TBD</strong>
+    Today's walkthrough is May 12. Once Tim &amp; Jennifer confirm the target Active Thursday, we'll lock the prep calendar and milestones below. The default 14-day runway from walkthrough to Active points toward Thursday, May 28.
+  </div>
+
+  <div class="customize-live">
+    <div class="eyebrow">Customize Live</div>
+    <div class="cl-grid">
+      <div class="cl-field">
+        <label>Strategic List Price</label>
+        <input type="text" id="input-price" value="" placeholder="$_________">
+      </div>
+      <div class="cl-field">
+        <label>Target Active Thursday</label>
+        <input type="text" id="input-active" value="" placeholder="Thursday, ___ __, 2026">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== METHOD ===== -->
+<section class="panel" id="panel-method">
+  <div class="eyebrow">Our Process</div>
+  <h2 class="section-title">The Nine Steps</h2>
+  <p class="section-sub">Each step is a structured action with a clear owner. Together, they make the difference between a home that lists and a home that <em>sells</em>.</p>
+
+  <div class="nine-grid">
+    <div class="step-card">
+      <div class="step-head"><span class="step-num">1</span><span class="step-title">Initial Walkthrough</span></div>
+      <div class="step-body">Staging advice, prelim pricing, sample timeline, seller homework forms.</div>
+    </div>
+    <div class="step-card">
+      <div class="step-head"><span class="step-num">2</span><span class="step-title">Post-Walkthrough Pricing</span></div>
+      <div class="step-body">Updated comps, final list-price recommendation, net sales sheet.</div>
+    </div>
+    <div class="step-card">
+      <div class="step-head"><span class="step-num">3</span><span class="step-title">Documents Signed &amp; Vendors Scheduled</span></div>
+      <div class="step-body">Listing agreement signed, photoshoot reserved, vendors lined up.</div>
+    </div>
+    <div class="step-card">
+      <div class="step-head"><span class="step-num">4</span><span class="step-title">Photography &amp; Marketing Assets</span></div>
+      <div class="step-body">Pro photographer, drone, video, twilight (no smartphones, ever).</div>
+    </div>
+    <div class="step-card">
+      <div class="step-head"><span class="step-num">5</span><span class="step-title">MLS Listing Approved</span></div>
+      <div class="step-body">Seller reviews drafted listing for 100% accuracy before Coming Soon.</div>
+    </div>
+    <div class="step-card">
+      <div class="step-head"><span class="step-num">6</span><span class="step-title">Coming Soon Status</span></div>
+      <div class="step-body">Internal MLS status, marketing begins, full buyer/agent awareness pre-Active.</div>
+    </div>
+    <div class="step-card">
+      <div class="step-head"><span class="step-num">7</span><span class="step-title">Active Status</span></div>
+      <div class="step-body">Showings begin, traffic concentrated in first 72 hours.</div>
+    </div>
+    <div class="step-card">
+      <div class="step-head"><span class="step-num">8</span><span class="step-title">Open House</span></div>
+      <div class="step-body">Saturday and/or Sunday, hosted by a Story House buyer agent.</div>
+    </div>
+    <div class="step-card">
+      <div class="step-head"><span class="step-num">9</span><span class="step-title">Offers Reviewed</span></div>
+      <div class="step-body">Set offer-review date, side-by-side comparison, Errin negotiates.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== NET SHEET ===== -->
+<section class="panel" id="panel-netsheet">
+  <div class="eyebrow">Bottom Line</div>
+  <h2 class="section-title">Net Sheet — Three Scenarios</h2>
+  <p class="section-sub">Three scenarios update live as inputs are filled in. All fields blank for now — Errin will populate once Tim &amp; Jennifer share their list price thinking and mortgage balance.</p>
+
+  <div class="ns-controls">
+    <div class="eyebrow">Live Inputs</div>
+    <div class="ns-ctrl-grid">
+      <div class="ns-ctrl-field">
+        <label>Listing Commission %</label>
+        <input type="number" id="ctrl-listing-pct" value="" step="0.1" placeholder="3">
+      </div>
+      <div class="ns-ctrl-field">
+        <label>Buyer Broker Comp %</label>
+        <input type="number" id="ctrl-buyer-pct" value="" step="0.1" placeholder="3">
+      </div>
+      <div class="ns-ctrl-field">
+        <label>Seller Concessions ($)</label>
+        <input type="number" id="ctrl-concessions" value="" step="500" placeholder="0">
+      </div>
+      <div class="ns-ctrl-field">
+        <label>Mortgage Payoff ($)</label>
+        <input type="number" id="ctrl-mortgage" value="" step="1000" placeholder="0">
+      </div>
+      <div class="ns-ctrl-field">
+        <label>Home Warranty ($)</label>
+        <input type="number" id="ctrl-warranty" value="" step="50" placeholder="600">
+      </div>
+      <div class="ns-ctrl-field">
+        <label>WDI Inspection Max ($)</label>
+        <input type="number" id="ctrl-wdi" value="" step="100" placeholder="1000">
+      </div>
+      <div class="ns-ctrl-field">
+        <label>Property Tax Proration ($)</label>
+        <input type="number" id="ctrl-tax" value="" step="100" placeholder="1200">
+      </div>
+      <div class="ns-ctrl-field">
+        <label>HOA Special Assessment ($)</label>
+        <input type="number" id="ctrl-hoa" value="" step="100" placeholder="0">
+      </div>
+    </div>
+  </div>
+
+  <div class="ns-table-wrap">
+    <table class="ns-table">
+      <thead>
+        <tr>
+          <th class="label-col">Line Item</th>
+          <th class="value-col">Conservative<span class="col-sub" id="hdr-conservative">$—</span></th>
+          <th class="value-col strategic-col">Strategic<span class="col-sub" id="hdr-strategic">$—</span></th>
+          <th class="value-col">Stretch<span class="col-sub" id="hdr-stretch">$—</span></th>
+        </tr>
+      </thead>
+      <tbody id="ns-tbody">
+        <!-- Filled by JS -->
+      </tbody>
+      <tfoot>
+        <tr>
+          <td>Estimated Net to Seller</td>
+          <td id="net-conservative">$0</td>
+          <td id="net-strategic" class="strategic-foot">$0</td>
+          <td id="net-stretch">$0</td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+</section>
+
+<!-- ===== TIMELINE ===== -->
+<section class="panel" id="panel-timeline">
+  <div class="eyebrow">The Schedule</div>
+  <h2 class="section-title">Backward from Active Thursday</h2>
+  <p class="section-sub">Anchored on the target Active Thursday once Tim &amp; Jennifer confirm. Default working dates below assume <strong>Thursday, May 28, 2026</strong> — adjustable.</p>
+
+  <div class="timeline-cal" id="timeline-cal">
+    <!-- Filled by JS -->
+  </div>
+  <div class="cal-legend">
+    <span class="lg-prep">Prep phase</span>
+    <span class="lg-launch">Launch phase</span>
+    <span class="lg-live">Live / Active</span>
+  </div>
+
+  <div class="milestones" style="margin-top: 30px;">
+    <div class="milestone">
+      <div class="ms-date">Tue, May 12</div>
+      <div>
+        <div class="ms-title">Initial Walkthrough</div>
+        <div class="ms-meta">Owner: Errin · Staging advice, prelim pricing, seller homework forms</div>
+      </div>
+    </div>
+    <div class="milestone">
+      <div class="ms-date">Thu, May 14</div>
+      <div>
+        <div class="ms-title">Post-Walkthrough Pricing</div>
+        <div class="ms-meta">Owner: Errin · Final list price, net sheet refined, comps updated</div>
+      </div>
+    </div>
+    <div class="milestone">
+      <div class="ms-date">Fri, May 15</div>
+      <div>
+        <div class="ms-title">Listing Documents Signed &amp; Vendors Scheduled</div>
+        <div class="ms-meta">Owner: Ann · Listing agreement, photographer booked, vendors lined up</div>
+      </div>
+    </div>
+    <div class="milestone">
+      <div class="ms-date">Mon, May 18</div>
+      <div>
+        <div class="ms-title">Photography &amp; Marketing Assets</div>
+        <div class="ms-meta">Owner: Yam + Photographer · Pro photos, drone, video, twilight</div>
+      </div>
+    </div>
+    <div class="milestone">
+      <div class="ms-date">Wed, May 20</div>
+      <div>
+        <div class="ms-title">MLS Listing Approved</div>
+        <div class="ms-meta">Owner: Errin + Sellers · Final review of MLS copy and photos before going live</div>
+      </div>
+    </div>
+    <div class="milestone">
+      <div class="ms-date">Thu, May 21</div>
+      <div>
+        <div class="ms-title">Coming Soon Status</div>
+        <div class="ms-meta">Owner: Yam · Internal MLS Coming Soon, marketing begins, buyer/agent buzz</div>
+      </div>
+    </div>
+    <div class="milestone">
+      <div class="ms-date">Thu, May 28</div>
+      <div>
+        <div class="ms-title">Active Status — Showings Begin</div>
+        <div class="ms-meta">Owner: Errin + Buyer Agents · Live on MLS, syndication, first 72 hours = peak traffic</div>
+      </div>
+    </div>
+    <div class="milestone">
+      <div class="ms-date">Sat, May 30</div>
+      <div>
+        <div class="ms-title">Open House</div>
+        <div class="ms-meta">Owner: Story House Buyer Agent · Saturday and/or Sunday</div>
+      </div>
+    </div>
+    <div class="milestone">
+      <div class="ms-date">Tue, Jun 2</div>
+      <div>
+        <div class="ms-title">Offers Reviewed</div>
+        <div class="ms-meta">Owner: Errin · Offer review date, side-by-side comparison, Errin negotiates</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== WALKTHROUGH ===== -->
+<section class="panel" id="panel-walkthrough">
+  <div class="eyebrow">Capture</div>
+  <h2 class="section-title">Home Features Walkthrough</h2>
+  <p class="section-sub">Tap chips as you walk through. All inputs save with Print to PDF and bundle into the team email at the bottom.</p>
+
+  <div class="wt-area-grid" id="wt-area-grid">
+    <!-- Filled by JS -->
+  </div>
+
+  <h3 style="font-family: Georgia, serif; font-size: 22px; margin-top: 30px; margin-bottom: 14px; font-weight: normal;">Additional Bedrooms</h3>
+  <div style="overflow-x:auto;">
+    <table class="bedroom-table" id="bedroom-table">
+      <!-- Filled by JS -->
+    </table>
+  </div>
+
+  <h3 style="font-family: Georgia, serif; font-size: 22px; margin-top: 30px; margin-bottom: 14px; font-weight: normal;">Property Systems</h3>
+  <div class="systems-grid" id="systems-grid">
+    <!-- Filled by JS -->
+  </div>
+
+  <div class="mini-card-row">
+    <div class="system-card">
+      <h5>HOA</h5>
+      <div>
+        <span class="chip selected" onclick="toggleChip(this, 'hoa-y')" data-key="hoa-y">Yes</span>
+        <span class="chip" onclick="toggleChip(this, 'hoa-n')" data-key="hoa-n">No</span>
+      </div>
+      <input type="number" class="wt-input" placeholder="$ per month (LMOA dues)" id="hoa-dues" style="margin-top: 8px;">
+    </div>
+    <div class="system-card">
+      <h5>Garage</h5>
+      <div>
+        <span class="chip" onclick="toggleChip(this, 'gar-y')" data-key="gar-y">Yes</span>
+        <span class="chip" onclick="toggleChip(this, 'gar-n')" data-key="gar-n">No</span>
+      </div>
+      <input type="number" class="wt-input" placeholder="# of cars" id="gar-cars" value="" style="margin-top: 8px;">
+    </div>
+  </div>
+
+  <div class="focus-block">
+    <h4 style="font-family: Georgia, serif; font-size: 20px; margin: 0 0 6px; font-weight: normal;">Highlights &amp; Must-Mentions</h4>
+    <div class="ck-sub" style="color: var(--slate); font-size: 13px; margin-bottom: 8px;">Top 5–10 features to surface in the MLS description — anything we want buyers to know.</div>
+    <textarea id="wt-highlights" placeholder="- &#10;- &#10;- &#10;- &#10;- &#10;(Errin: top 5–10 features to surface in MLS copy — fill in live during the walkthrough)"></textarea>
+  </div>
+
+  <div class="wt-checklist">
+    <h4>For Ann &amp; Yam — Confirm Collected</h4>
+    <div class="ck-sub">Items the listing team needs from the seller. Check off what you got during the appointment so we can chase what's still outstanding.</div>
+    <div class="checklist-grid" id="team-checklist">
+      <!-- Filled by JS -->
+    </div>
+    <input type="text" class="wt-input" id="team-other" placeholder="Other (free text)" style="margin-top: 10px;">
+  </div>
+
+  <div class="wt-checklist">
+    <h4>Vendor Referrals to Send the Seller</h4>
+    <div class="ck-sub">Check off any the seller asked about or that you proactively want to send. We'll bundle them into a single email with our preferred contacts.</div>
+    <div class="checklist-grid" id="vendor-checklist">
+      <!-- Filled by JS -->
+    </div>
+    <input type="text" class="wt-input" id="vendor-other" placeholder="Other (free text)" style="margin-top: 10px;">
+  </div>
+
+  <div class="focus-block">
+    <label>Focus Areas — Interior</label>
+    <textarea id="focus-interior" placeholder="Specific interior prep recommendations for this home..."></textarea>
+    <label>Focus Areas — Exterior</label>
+    <textarea id="focus-exterior" placeholder="Specific exterior prep recommendations for this home..."></textarea>
+  </div>
+
+  <div class="send-team-block">
+    <h4>Send to Listing Team</h4>
+    <p>Bundles every selected chip, filled input, checklist item, and note into an email to Ann + Yam (cc'd to you).</p>
+    <button class="btn-email" onclick="sendNotesToTeam()">Email Notes to Team</button>
+  </div>
+</section>
+
+<!-- ===== PREP ===== -->
+<section class="panel" id="panel-prep">
+  <div class="eyebrow">Get Ready</div>
+  <h2 class="section-title">Focus Areas for 19 Woodridge</h2>
+  <p class="section-sub">Errin's specific recommendations for this home, captured during the walkthrough.</p>
+
+  <div class="prep-focus-mirror">
+    <h5>Interior</h5>
+    <div class="mirror-body" id="mirror-interior"><span class="mirror-empty">Captured on the Walkthrough tab.</span></div>
+  </div>
+  <div class="prep-focus-mirror">
+    <h5>Exterior</h5>
+    <div class="mirror-body" id="mirror-exterior"><span class="mirror-empty">Captured on the Walkthrough tab.</span></div>
+  </div>
+
+  <h3 style="font-family: Georgia, serif; font-size: 24px; margin-top: 36px; margin-bottom: 16px; font-weight: normal;">Story House Staging Playbook</h3>
+  <p class="section-sub">The canonical pre-listing prep guide — work through each area at your own pace.</p>
+
+  <div class="staging-area">
+    <h5>Curb Appeal &amp; Entry</h5>
+    <ul>
+      <li>Pressure-wash front walk, porch, and exterior siding</li>
+      <li>Edge beds, mulch, replace tired plantings with seasonal color</li>
+      <li>New welcome mat, fresh paint on front door if dinged</li>
+      <li>Polish or replace front door hardware, repaint mailbox post</li>
+      <li>Clear gutters, touch-up trim paint where peeling</li>
+    </ul>
+  </div>
+
+  <div class="staging-area">
+    <h5>Kitchen</h5>
+    <ul>
+      <li>Clear all countertops — keep only one or two intentional items</li>
+      <li>Deep-clean appliances inside and out (oven, fridge, microwave)</li>
+      <li>Empty cabinets to 70% — buyers open them</li>
+      <li>Polish hardware, replace dated knobs if needed</li>
+      <li>Fresh dish towels, hide trash can</li>
+    </ul>
+  </div>
+
+  <div class="staging-area">
+    <h5>Primary Suite</h5>
+    <ul>
+      <li>White or neutral linens, hotel-style bed</li>
+      <li>Closet at 70% — buyers will open every door</li>
+      <li>Clear nightstands except one lamp and one book</li>
+      <li>Fresh flowers or small plant on the dresser</li>
+    </ul>
+  </div>
+
+  <div class="staging-area">
+    <h5>Primary Bath</h5>
+    <ul>
+      <li>Clear counters — only soap dispenser, one candle</li>
+      <li>Fresh white towels rolled or folded crisply</li>
+      <li>Re-caulk if any seams look tired</li>
+      <li>Polish all fixtures, deep-clean glass</li>
+    </ul>
+  </div>
+
+  <div class="staging-area">
+    <h5>Living &amp; Family Rooms</h5>
+    <ul>
+      <li>Remove 30–50% of furniture if rooms feel crowded</li>
+      <li>Anchor with a rug, fluff pillows, fresh throws</li>
+      <li>Bookshelves at 70% — stack horizontally with breaks</li>
+      <li>Wipe TV screens, hide cords</li>
+    </ul>
+  </div>
+
+  <div class="staging-area">
+    <h5>Dining Room</h5>
+    <ul>
+      <li>Set the table simply — neutral runner, no full place settings</li>
+      <li>Fresh flowers or greenery centerpiece</li>
+      <li>Dust chandelier, replace any out bulbs</li>
+    </ul>
+  </div>
+
+  <div class="staging-area">
+    <h5>Bedrooms &amp; Closets</h5>
+    <ul>
+      <li>Make every bed daily with neutral linens</li>
+      <li>Clear all surfaces, hide laundry</li>
+      <li>Closets at 70%, shoes lined up</li>
+      <li>Remove personal photos from frames or replace with art</li>
+    </ul>
+  </div>
+
+  <div class="staging-area">
+    <h5>Basement / Rec Room</h5>
+    <ul>
+      <li>Bright lighting, no overflow storage on display</li>
+      <li>Fresh-smelling dehumidifier running before showings</li>
+      <li>Clean carpet or area rug if applicable</li>
+    </ul>
+  </div>
+
+  <div class="staging-area">
+    <h5>Outdoor Spaces &amp; Acreage</h5>
+    <ul>
+      <li>Mow, edge, weed-eat the week of listing</li>
+      <li>Power-wash deck and patio</li>
+      <li>Stage outdoor seating area — fresh cushions, candles, throw</li>
+      <li>Clear pool/water features of debris, run before showings</li>
+      <li>Walk the property line — clear fallen limbs, mow accessible trails</li>
+    </ul>
+  </div>
+
+  <div class="staging-area">
+    <h5>Day-of Showing</h5>
+    <ul>
+      <li>Open every blind and curtain, turn on every light</li>
+      <li>Soft music, neutral scent (avoid plug-ins — fresh-baked bread or coffee is better)</li>
+      <li>Temperature at 70°F</li>
+      <li>Trash cans in the garage, pet items out of sight</li>
+      <li>Leave the home — buyers can't relax with sellers present</li>
+    </ul>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="ft-wordmark">Story House <span style="color: var(--mauve);">Real Estate</span></div>
+  <div class="ft-tagline">Designed, Not Default.</div>
+  <div class="ft-addr">2110 Ivy Road, Charlottesville, VA 22903 · storyhousere.com</div>
+</footer>
+
+<button class="btn-print" onclick="window.print()">Print to PDF</button>
+
+<script>
+// ===== TEAM EMAILS =====
+const TEAM_EMAILS = {
+  ann: 'ann@storyhousere.com',
+  yam: 'yam@storyhousere.com',
+  agent: 'errin@storyhousere.com'
+};
+const PROPERTY_ADDRESS = '19 Woodridge Rd, Palmyra VA 22963';
+const CLIENT_NAME = 'McGarey';
+
+// ===== Client mode check =====
+(function() {
+  const params = new URLSearchParams(window.location.search);
+  if (params.get('mode') === 'client') {
+    document.getElementById('tab-walkthrough').style.display = 'none';
+    document.querySelector('.customize-live').style.display = 'none';
+    document.querySelector('.ns-controls').style.display = 'none';
+    const sendBlock = document.querySelector('.send-team-block');
+    if (sendBlock) sendBlock.style.display = 'none';
+  }
+})();
+
+// ===== Tab navigation =====
+document.querySelectorAll('.tabnav button').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.tabnav button').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('panel-' + btn.dataset.tab).classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+});
+
+// ===== State =====
+const state = {
+  prices: { conservative: 0, strategic: 0, stretch: 0 },
+  controls: {
+    listingPct: 0, buyerPct: 0, concessions: 0,
+    mortgage: 0, warranty: 0, wdi: 0, tax: 0, hoa: 0
+  }
+};
+
+// ===== Net Sheet rendering =====
+function fmt(n) {
+  if (n === 0 || isNaN(n)) return '$—';
+  return '$' + Math.round(n).toLocaleString();
+}
+function fmtAlways(n) {
+  // For totals — always show the number even if 0
+  return '$' + Math.round(n || 0).toLocaleString();
+}
+
+function calcScenario(price) {
+  const c = state.controls;
+  const listingComm = price * (c.listingPct / 100);
+  const buyerComm = price * (c.buyerPct / 100);
+  const grantorsTax = price / 1000;
+  const deedPrep = 400;
+  const settlement = 350;
+  const wdi = c.wdi;
+  const warranty = c.warranty;
+  const taxProration = c.tax;
+  const hoa = c.hoa;
+  const subtotalAfterCommissions = price - c.concessions - listingComm - buyerComm;
+  const closingCostsTotal = deedPrep + grantorsTax + settlement + wdi + warranty;
+  const prorations = taxProration + hoa;
+  const payoffs = c.mortgage;
+  const net = subtotalAfterCommissions - closingCostsTotal - prorations - payoffs;
+
+  return {
+    salePrice: price, concessions: c.concessions, listingComm, buyerComm,
+    subtotal: subtotalAfterCommissions,
+    deedPrep, grantorsTax, settlement, wdi, warranty,
+    taxProration, hoa, payoffs, net
+  };
+}
+
+function renderNetSheet() {
+  const con = calcScenario(state.prices.conservative);
+  const strat = calcScenario(state.prices.strategic);
+  const stretch = calcScenario(state.prices.stretch);
+
+  document.getElementById('hdr-conservative').textContent = fmt(state.prices.conservative);
+  document.getElementById('hdr-strategic').textContent = fmt(state.prices.strategic);
+  document.getElementById('hdr-stretch').textContent = fmt(state.prices.stretch);
+
+  const rows = [
+    { type: 'section', label: '1 · Sale Proceeds' },
+    { label: 'Sale Price', vals: ['salePrice', 'salePrice', 'salePrice'] },
+    { label: 'Less: Seller Concessions', vals: ['concessions', 'concessions', 'concessions'], negative: true },
+    { label: 'Less: Listing Commission', note: state.controls.listingPct + '% of sale price', vals: ['listingComm', 'listingComm', 'listingComm'], negative: true },
+    { label: 'Less: Buyer Broker Compensation', note: 'Typically 1–3%, negotiated at time of offer. Estimated ' + state.controls.buyerPct + '%.', vals: ['buyerComm', 'buyerComm', 'buyerComm'], negative: true },
+    { label: 'Subtotal', vals: ['subtotal', 'subtotal', 'subtotal'], bold: true },
+
+    { type: 'section', label: '2 · Standard Seller Closing Costs' },
+    { label: 'Deed Preparation', note: 'estimate', vals: ['deedPrep', 'deedPrep', 'deedPrep'], negative: true },
+    { label: "VA Grantor's Tax", note: '$1 per $1,000 of sale price', vals: ['grantorsTax', 'grantorsTax', 'grantorsTax'], negative: true },
+    { label: 'Settlement Services Cap', note: 'per Para. 9b standard VA contract', vals: ['settlement', 'settlement', 'settlement'], negative: true },
+    { label: 'WDI Inspection (max)', vals: ['wdi', 'wdi', 'wdi'], negative: true },
+    { label: 'Home Warranty', note: 'estimate', vals: ['warranty', 'warranty', 'warranty'], negative: true },
+
+    { type: 'section', label: '3 · Pro-Rations' },
+    { label: 'Property Tax Proration', vals: ['taxProration', 'taxProration', 'taxProration'], negative: true },
+    { label: 'HOA / Special Assessments', vals: ['hoa', 'hoa', 'hoa'], negative: true },
+
+    { type: 'section', label: '4 · Seller-Specific Payoffs' },
+    { label: 'Mortgage Payoff (1st)', vals: ['payoffs', 'payoffs', 'payoffs'], negative: true }
+  ];
+
+  const tbody = document.getElementById('ns-tbody');
+  tbody.innerHTML = '';
+  rows.forEach(r => {
+    const tr = document.createElement('tr');
+    if (r.type === 'section') {
+      tr.className = 'ns-section-row';
+      tr.innerHTML = `<td colspan="4">${r.label}</td>`;
+    } else {
+      const sign = r.negative ? '–' : '';
+      const valHtml = (sc, idx) => {
+        const v = sc[r.vals[idx]];
+        const classes = ['value'];
+        if (idx === 1) classes.push('strategic');
+        return `<td class="${classes.join(' ')}">${sign}${fmt(v)}</td>`;
+      };
+      let lbl = `<strong>${r.label}</strong>`;
+      if (r.note) lbl += `<span class="ns-note">${r.note}</span>`;
+      tr.className = r.bold ? 'ns-subtotal' : '';
+      tr.innerHTML = `<td>${lbl}</td>${valHtml(con,0)}${valHtml(strat,1)}${valHtml(stretch,2)}`;
+    }
+    tbody.appendChild(tr);
+  });
+
+  document.getElementById('net-conservative').textContent = fmt(con.net);
+  document.getElementById('net-strategic').textContent = fmt(strat.net);
+  document.getElementById('net-stretch').textContent = fmt(stretch.net);
+}
+
+// Wire net sheet inputs
+function wireNumericInput(id, key) {
+  document.getElementById(id).addEventListener('input', e => {
+    const v = parseFloat(e.target.value);
+    state.controls[key] = isNaN(v) ? 0 : v;
+    renderNetSheet();
+  });
+}
+wireNumericInput('ctrl-listing-pct', 'listingPct');
+wireNumericInput('ctrl-buyer-pct', 'buyerPct');
+wireNumericInput('ctrl-concessions', 'concessions');
+wireNumericInput('ctrl-mortgage', 'mortgage');
+wireNumericInput('ctrl-warranty', 'warranty');
+wireNumericInput('ctrl-wdi', 'wdi');
+wireNumericInput('ctrl-tax', 'tax');
+wireNumericInput('ctrl-hoa', 'hoa');
+
+// Property tab price input — updates strategic and ±25K scenarios
+document.getElementById('input-price').addEventListener('input', e => {
+  const raw = e.target.value.replace(/[^0-9]/g, '');
+  const p = parseInt(raw);
+  if (!isNaN(p)) {
+    state.prices.strategic = p;
+    state.prices.conservative = p - 25000;
+    state.prices.stretch = p + 25000;
+    document.getElementById('display-price').textContent = fmt(p);
+    renderNetSheet();
+  }
+});
+
+// ===== Walkthrough data =====
+const WALKTHROUGH_AREAS = [
+  { id: 'kitchen', title: 'Kitchen', groups: [
+    { label: 'Layout', chips: ['Island', 'Stove in island', 'Sink in island', 'Drawers below island'] },
+    { label: 'Oven', chips: ['Single', 'Double', 'Built-in', 'Electric', 'Gas'] },
+    { label: 'Range / Cooktop', chips: ['Range', 'Cooktop', 'Built-in cooktop', 'Gas', 'Electric'] },
+    { label: 'Microwave', chips: ['Built-in', 'On counter'] },
+    { label: 'Refrigerator', chips: ['Regular', 'Side-by-side'] },
+    { label: 'Countertops', chips: ['Granite', 'Quartz', 'Marble', 'Butcher block'] },
+    { label: 'Flooring', chips: ['Hardwood', 'Tile', 'Stone', 'Parquet', 'Carpet'] },
+    { label: 'Other features', chips: ['Backsplash', 'Stainless steel appliances'] }
+  ], inputs: [
+    { id: 'kitchen-other-counter', placeholder: 'Other countertops' },
+    { id: 'kitchen-brand', placeholder: 'Appliance brand(s) — e.g., Monogram' }
+  ]},
+  { id: 'master-bedroom', title: 'Master Bedroom', groups: [
+    { label: 'Floor', chips: ['Upstairs', 'Downstairs'] },
+    { label: 'Closets', chips: ['Walk-in', 'His & Hers'] },
+    { label: 'Features', chips: ['Suite', 'Sitting area'] },
+    { label: 'Flooring', chips: ['Carpet', 'Hardwood'] }
+  ]},
+  { id: 'master-bath', title: 'Master Bath', groups: [
+    { label: 'Shower', chips: ['Walk-in', 'Steam', 'Shower only', 'Separate tub/shower', 'Combo'] },
+    { label: 'Tub', chips: ['Tile surround', 'Tub only', 'Whirlpool', 'Jacuzzi'] },
+    { label: 'Layout', chips: ['Dressing room', 'Double vanities', 'Toilet separate'] },
+    { label: 'Flooring', chips: ['Stone', 'Tile', 'Vinyl', 'Marble'] }
+  ]},
+  { id: 'dining-room', title: 'Dining Room', groups: [
+    { label: 'Style', chips: ['Formal', 'Wainscoting', 'Chandelier'] },
+    { label: 'Flooring', chips: ['Hardwood', 'Carpet', 'Stone', 'Marble', 'Parquet'] }
+  ]},
+  { id: 'living-room', title: 'Living Room', groups: [
+    { label: 'Style', chips: ['Formal', 'Separate', 'Fireplace', 'Wainscoting', 'Wall of windows', 'Track lighting', 'Built-in bookcase'] },
+    { label: 'Flooring', chips: ['Carpet', 'Hardwood', 'Marble', 'Stone', 'Parquet'] }
+  ]},
+  { id: 'rec-room', title: 'Rec Room', groups: [
+    { label: 'Location', chips: ['Basement', 'Over garage', 'Walk-out'] },
+    { label: 'Features', chips: ['Fireplace', 'Wet bar', 'Recessed lighting', 'Bathroom', 'Unfinished'] },
+    { label: 'Flooring', chips: ['Carpet', 'Hardwood'] }
+  ], inputs: [{ id: 'rec-floor', placeholder: 'If on other floor' }]},
+  { id: 'patio-deck', title: 'Patio / Deck', groups: [
+    { label: 'Outdoor structures', chips: ['Covered deck', 'Covered porch', 'Covered patio', 'Patio', 'Deck', 'Screened patio', 'Screened deck', 'None'] }
+  ]},
+  { id: 'pool', title: 'Pool', groups: [
+    { label: 'Type', chips: ['Above ground', 'In-ground', 'Indoor', 'None'] }
+  ]}
+];
+
+const PROPERTY_SYSTEMS = [
+  { id: 'water', title: 'Water', chips: ['City', 'Well', 'Septic', 'Sewer'] },
+  { id: 'air', title: 'Air', chips: ['Electric', 'Gas', 'Geothermal', 'Central', 'Attic fan', 'Dual'] },
+  { id: 'heat', title: 'Heat', chips: ['Coal', 'Gas', 'Solar', 'Propane', 'Baseboard', 'Heat pump', 'Electric', 'Geothermal', 'Wood', 'Oil', 'Furnace', 'Central'] }
+];
+
+const ADDITIONAL_BEDROOMS = ['#2', '#3', '#4', '#5'];
+const BEDROOM_ATTRS = ['Full Bath', 'Half Bath', 'Jack & Jill', 'Walk-in closet', 'Extra-large closet', 'Carpet', 'Hardwood'];
+const BEDROOM_TEXT_ROWS = ['Color', 'Floor (1st/2nd/3rd)', 'Overhead fan/lights', 'Bath shared with', 'Notes'];
+
+const TEAM_CHECKLIST = [
+  { id: 'ck-mortgage', label: 'Mortgage balance' },
+  { id: 'ck-floorplan', label: 'Copy of the floor plan' },
+  { id: 'ck-survey', label: 'Survey of the lot lines' },
+  { id: 'ck-improvements', label: 'Recent improvements list' }
+];
+
+const VENDOR_CHECKLIST = [
+  { id: 'vd-paint', label: 'Paint' },
+  { id: 'vd-movers', label: 'Movers' },
+  { id: 'vd-landscape', label: 'Yard / landscaping' },
+  { id: 'vd-flooring', label: 'Flooring' },
+  { id: 'vd-power', label: 'Power-washing' },
+  { id: 'vd-stagers', label: 'Stagers' },
+  { id: 'vd-lender', label: 'Lender' },
+  { id: 'vd-referral', label: 'Out-of-area agent referral' }
+];
+
+// ===== Render walkthrough =====
+function renderWalkthrough() {
+  const grid = document.getElementById('wt-area-grid');
+  grid.innerHTML = '';
+  WALKTHROUGH_AREAS.forEach(area => {
+    const card = document.createElement('div');
+    card.className = 'wt-card';
+    let html = `<h4>${area.title}</h4>`;
+    area.groups.forEach((g, gi) => {
+      html += `<div class="chip-group"><div class="chip-group-label">${g.label}</div>`;
+      g.chips.forEach(chip => {
+        const key = `${area.id}-${gi}-${chip}`;
+        html += `<span class="chip" onclick="toggleChip(this, '${key}')" data-key="${key}">${chip}</span>`;
+      });
+      html += `</div>`;
+    });
+    if (area.inputs) {
+      area.inputs.forEach(inp => {
+        html += `<input type="text" class="wt-input" id="${inp.id}" placeholder="${inp.placeholder}">`;
+      });
+    }
+    html += `<textarea class="wt-textarea" id="wt-notes-${area.id}" placeholder="Other notes about the ${area.title.toLowerCase()}..."></textarea>`;
+    card.innerHTML = html;
+    grid.appendChild(card);
+  });
+
+  // Systems
+  const sysGrid = document.getElementById('systems-grid');
+  sysGrid.innerHTML = '';
+  PROPERTY_SYSTEMS.forEach(sys => {
+    const card = document.createElement('div');
+    card.className = 'system-card';
+    let html = `<h5>${sys.title}</h5>`;
+    sys.chips.forEach(chip => {
+      const key = `sys-${sys.id}-${chip}`;
+      html += `<span class="chip" onclick="toggleChip(this, '${key}')" data-key="${key}">${chip}</span>`;
+    });
+    card.innerHTML = html;
+    sysGrid.appendChild(card);
+  });
+
+  // Bedroom table
+  const bt = document.getElementById('bedroom-table');
+  let bthtml = '<thead><tr><th></th>';
+  ADDITIONAL_BEDROOMS.forEach(b => { bthtml += `<th>Bedroom ${b}</th>`; });
+  bthtml += '</tr></thead><tbody>';
+  BEDROOM_ATTRS.forEach((attr, ai) => {
+    bthtml += `<tr><td class="bd-attr">${attr}</td>`;
+    ADDITIONAL_BEDROOMS.forEach((b, bi) => {
+      const key = `bd-${bi}-${ai}`;
+      bthtml += `<td><span class="bd-check" onclick="toggleBdCheckbox(this, '${key}')" data-key="${key}"></span></td>`;
+    });
+    bthtml += '</tr>';
+  });
+  BEDROOM_TEXT_ROWS.forEach((row, ri) => {
+    bthtml += `<tr><td class="bd-attr">${row}</td>`;
+    ADDITIONAL_BEDROOMS.forEach((b, bi) => {
+      bthtml += `<td><input type="text" class="bd-textinput" id="bdtxt-${bi}-${ri}"></td>`;
+    });
+    bthtml += '</tr>';
+  });
+  bthtml += '</tbody>';
+  bt.innerHTML = bthtml;
+
+  // Team checklist
+  const tc = document.getElementById('team-checklist');
+  tc.innerHTML = '';
+  TEAM_CHECKLIST.forEach(item => {
+    const div = document.createElement('div');
+    div.className = 'ck-item';
+    div.dataset.id = item.id;
+    div.innerHTML = `<span class="ck-box"></span><span>${item.label}</span>`;
+    div.onclick = () => div.classList.toggle('checked');
+    tc.appendChild(div);
+  });
+
+  // Vendor checklist
+  const vc = document.getElementById('vendor-checklist');
+  vc.innerHTML = '';
+  VENDOR_CHECKLIST.forEach(item => {
+    const div = document.createElement('div');
+    div.className = 'ck-item';
+    div.dataset.id = item.id;
+    div.innerHTML = `<span class="ck-box"></span><span>${item.label}</span>`;
+    div.onclick = () => div.classList.toggle('checked');
+    vc.appendChild(div);
+  });
+}
+
+// Chip / bedroom toggles
+function toggleChip(el, key) {
+  el.classList.toggle('selected');
+}
+function toggleBdCheckbox(el, key) {
+  el.classList.toggle('checked');
+}
+
+// ===== Focus area mirror =====
+function syncFocusMirror(srcId, mirrorId) {
+  const src = document.getElementById(srcId);
+  const mirror = document.getElementById(mirrorId);
+  const sync = () => {
+    const v = src.value.trim();
+    if (v) {
+      mirror.innerHTML = v.replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    } else {
+      mirror.innerHTML = '<span class="mirror-empty">Captured on the Walkthrough tab.</span>';
+    }
+  };
+  src.addEventListener('input', sync);
+  src.addEventListener('change', sync);
+  src.addEventListener('blur', sync);
+  sync();
+}
+
+// ===== Email to team =====
+function sendNotesToTeam() {
+  let body = `Walkthrough notes — ${PROPERTY_ADDRESS}\n`;
+  body += `Sellers: Tim & Jennifer McGarey\n`;
+  body += `Listing Agent: Errin Searcy\n\n`;
+
+  WALKTHROUGH_AREAS.forEach(area => {
+    let lines = [];
+    area.groups.forEach((g, gi) => {
+      const selectedChips = g.chips.filter(c => {
+        const el = document.querySelector(`[data-key="${area.id}-${gi}-${c}"]`);
+        return el && el.classList.contains('selected');
+      });
+      if (selectedChips.length) lines.push(`  ${g.label}: ${selectedChips.join(', ')}`);
+    });
+    if (area.inputs) {
+      area.inputs.forEach(inp => {
+        const v = document.getElementById(inp.id)?.value?.trim();
+        if (v) lines.push(`  ${inp.placeholder}: ${v}`);
+      });
+    }
+    const notes = document.getElementById(`wt-notes-${area.id}`)?.value?.trim();
+    if (notes) lines.push(`  Notes: ${notes}`);
+    if (lines.length) body += `\n${area.title.toUpperCase()}\n${lines.join('\n')}\n`;
+  });
+
+  // Bedrooms
+  let bdLines = [];
+  ADDITIONAL_BEDROOMS.forEach((b, bi) => {
+    const attrs = BEDROOM_ATTRS.filter((a, ai) => {
+      const el = document.querySelector(`[data-key="bd-${bi}-${ai}"]`);
+      return el && el.classList.contains('checked');
+    });
+    const texts = BEDROOM_TEXT_ROWS.map((row, ri) => {
+      const v = document.getElementById(`bdtxt-${bi}-${ri}`)?.value?.trim();
+      return v ? `${row}: ${v}` : null;
+    }).filter(Boolean);
+    if (attrs.length || texts.length) {
+      bdLines.push(`  Bedroom ${b}: ${attrs.join(', ')}${texts.length ? ' | ' + texts.join('; ') : ''}`);
+    }
+  });
+  if (bdLines.length) body += `\nADDITIONAL BEDROOMS\n${bdLines.join('\n')}\n`;
+
+  // Systems
+  let sysLines = [];
+  PROPERTY_SYSTEMS.forEach(sys => {
+    const selected = sys.chips.filter(c => {
+      const el = document.querySelector(`[data-key="sys-${sys.id}-${c}"]`);
+      return el && el.classList.contains('selected');
+    });
+    if (selected.length) sysLines.push(`  ${sys.title}: ${selected.join(', ')}`);
+  });
+  const hoaDues = document.getElementById('hoa-dues')?.value?.trim();
+  const garCars = document.getElementById('gar-cars')?.value?.trim();
+  if (hoaDues) sysLines.push(`  HOA: $${hoaDues}/mo`);
+  if (garCars) sysLines.push(`  Garage: ${garCars} car`);
+  if (sysLines.length) body += `\nPROPERTY SYSTEMS\n${sysLines.join('\n')}\n`;
+
+  // Highlights
+  const hl = document.getElementById('wt-highlights')?.value?.trim();
+  if (hl) body += `\nHIGHLIGHTS & MUST-MENTIONS\n${hl}\n`;
+
+  // Team checklist
+  const tcChecked = Array.from(document.querySelectorAll('#team-checklist .ck-item.checked'))
+    .map(el => el.textContent.trim());
+  const tcOther = document.getElementById('team-other')?.value?.trim();
+  if (tcChecked.length || tcOther) {
+    body += `\nCONFIRMED COLLECTED FROM SELLER\n`;
+    tcChecked.forEach(x => body += `  ✓ ${x}\n`);
+    if (tcOther) body += `  ✓ Other: ${tcOther}\n`;
+  }
+
+  // Vendor checklist
+  const vdChecked = Array.from(document.querySelectorAll('#vendor-checklist .ck-item.checked'))
+    .map(el => el.textContent.trim());
+  const vdOther = document.getElementById('vendor-other')?.value?.trim();
+  if (vdChecked.length || vdOther) {
+    body += `\nVENDOR REFERRALS TO SEND SELLER\n`;
+    vdChecked.forEach(x => body += `  ✓ ${x}\n`);
+    if (vdOther) body += `  ✓ Other: ${vdOther}\n`;
+  }
+
+  // Focus areas
+  const fi = document.getElementById('focus-interior')?.value?.trim();
+  const fe = document.getElementById('focus-exterior')?.value?.trim();
+  if (fi || fe) {
+    body += `\nFOCUS AREAS FOR PREP\n`;
+    if (fi) body += `  Interior:\n${fi.split('\n').map(l => '    ' + l).join('\n')}\n`;
+    if (fe) body += `  Exterior:\n${fe.split('\n').map(l => '    ' + l).join('\n')}\n`;
+  }
+
+  body += `\n—\nSent from the BestSeller Method™ dashboard.\n`;
+
+  const subject = `Walkthrough Notes — ${PROPERTY_ADDRESS} (${CLIENT_NAME})`;
+  const mailto = `mailto:${TEAM_EMAILS.ann},${TEAM_EMAILS.yam}?cc=${TEAM_EMAILS.agent}&subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  window.location.href = mailto;
+}
+
+// ===== Timeline calendar =====
+function renderCalendar() {
+  const cal = document.getElementById('timeline-cal');
+  // Calendar runs Mon May 11 → Sun May 31, 2026 (3 weeks)
+  const days = [
+    { d: 'Mon May 11', class: '', label: '' },
+    { d: 'Tue May 12', class: 'prep', label: 'Walkthrough' },
+    { d: 'Wed May 13', class: 'prep', label: '' },
+    { d: 'Thu May 14', class: 'prep', label: 'Pricing' },
+    { d: 'Fri May 15', class: 'prep', label: 'Docs Signed' },
+    { d: 'Sat May 16', class: 'prep', label: '' },
+    { d: 'Sun May 17', class: 'prep', label: '' },
+    { d: 'Mon May 18', class: 'launch', label: 'Photos' },
+    { d: 'Tue May 19', class: 'launch', label: '' },
+    { d: 'Wed May 20', class: 'launch', label: 'MLS Review' },
+    { d: 'Thu May 21', class: 'launch', label: 'Coming Soon' },
+    { d: 'Fri May 22', class: 'launch', label: '' },
+    { d: 'Sat May 23', class: 'launch', label: '' },
+    { d: 'Sun May 24', class: 'launch', label: '' },
+    { d: 'Mon May 25', class: 'launch', label: '' },
+    { d: 'Tue May 26', class: 'launch', label: '' },
+    { d: 'Wed May 27', class: 'launch', label: '' },
+    { d: 'Thu May 28', class: 'live', label: 'ACTIVE' },
+    { d: 'Fri May 29', class: 'live', label: '' },
+    { d: 'Sat May 30', class: 'live', label: 'Open House' },
+    { d: 'Sun May 31', class: 'live', label: '' }
+  ];
+  cal.innerHTML = '';
+  days.forEach(day => {
+    const el = document.createElement('div');
+    el.className = 'cal-day ' + day.class;
+    el.innerHTML = `<div class="cal-date">${day.d.split(' ').slice(1).join(' ')}</div><div class="cal-label">${day.label}</div>`;
+    cal.appendChild(el);
+  });
+}
+
+// ===== Init =====
+renderNetSheet();
+renderWalkthrough();
+renderCalendar();
+syncFocusMirror('focus-interior', 'mirror-interior');
+syncFocusMirror('focus-exterior', 'mirror-exterior');
+</script>
+</body>
+</html>
